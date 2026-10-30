@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { GradeLevel, TopicId, VocabularyWord, SessionResult, GameQuestion, WordProgress } from '../types/index.ts';
 import { INITIAL_VOCABULARY } from '../data/vocabulary.ts';
 import { buildMultipleChoiceQuestions, buildSentenceCompletionQuestions } from '../logic/reviewLogic.ts';
@@ -30,6 +30,8 @@ export const PlayView: React.FC<PlayViewProps> = ({
 }) => {
   const [activeGameType, setActiveGameType] = useState<'match' | 'multiple_choice' | 'sentence_completion' | null>(null);
   const [activeSessionResult, setActiveSessionResult] = useState<SessionResult | null>(null);
+  const [sessionQuestions, setSessionQuestions] = useState<GameQuestion[]>([]);
+  const [sessionKey, setSessionKey] = useState(0);
 
   // Vocabulary Map lookup
   const vocabularyMap = React.useMemo(() => {
@@ -41,47 +43,78 @@ export const PlayView: React.FC<PlayViewProps> = ({
   }, []);
 
   // Filter pool for current grade and topic
-  const eligibleWords = INITIAL_VOCABULARY.filter((w) => {
+  const eligibleWords = useMemo(() => INITIAL_VOCABULARY.filter((w) => {
     const matchGrade = w.grade === currentGrade;
     const matchTopic = selectedTopic === 'all' || w.topic === selectedTopic;
     return matchGrade && matchTopic;
-  });
+  }), [currentGrade, selectedTopic]);
 
-  // Prepare questions for multiple choice or sentence completion
-  const gameQuestions: GameQuestion[] = React.useMemo(() => {
-    if (!activeGameType || activeGameType === 'match') return [];
-
-    // Prioritize weak words first
-    const pool = eligibleWords.length > 0 ? eligibleWords : INITIAL_VOCABULARY;
+  const prepareQuestions = (gameType: 'multiple_choice' | 'sentence_completion'): GameQuestion[] => {
+    const pool = eligibleWords.length > 0 ? eligibleWords : INITIAL_VOCABULARY.filter((word) => word.grade === currentGrade);
     const sortedWords = [...pool].sort((a, b) => {
       const aWeak = progressMap[a.id]?.status === 'needs_review' || progressMap[a.id]?.manualFlagged ? 1 : 0;
       const bWeak = progressMap[b.id]?.status === 'needs_review' || progressMap[b.id]?.manualFlagged ? 1 : 0;
       return bWeak - aWeak;
     });
 
-    const targetSubset = sortedWords.slice(0, 8);
+    const questionWords = gameType === 'sentence_completion'
+      ? sortedWords.filter((word) => word.exampleEn.trim() && word.exampleEn.toLocaleLowerCase().includes(word.word.toLocaleLowerCase()))
+      : sortedWords;
+    const targetSubset = questionWords.slice(0, 8);
 
     // Merge with any approved teacher questions for this grade/topic
     const approved = loadApprovedQuestions().filter((q) => {
       const matchG = q.grade === currentGrade;
       const matchT = selectedTopic === 'all' || q.topic === selectedTopic;
-      const matchType = q.questionType === activeGameType;
+      const matchType = q.questionType === gameType;
       return matchG && matchT && matchType;
+    }).flatMap((question) => {
+      const answer = question.correctAnswer?.trim();
+      if (!answer) return [];
+
+      const optionMap = new Map<string, string>();
+      for (const option of question.options ?? []) {
+        const trimmed = option.trim();
+        const key = trimmed.normalize('NFKC').toLocaleLowerCase();
+        if (trimmed && key !== answer.normalize('NFKC').toLocaleLowerCase() && !optionMap.has(key)) {
+          optionMap.set(key, trimmed);
+        }
+      }
+      const answerKey = answer.normalize('NFKC').toLocaleLowerCase();
+
+      const poolOptions = pool.map((word) => gameType === 'multiple_choice' ? word.vietnamese : word.word);
+      for (const candidate of poolOptions) {
+        if (optionMap.size >= 3) break;
+        const trimmed = candidate.trim();
+        const key = trimmed.normalize('NFKC').toLocaleLowerCase();
+        if (trimmed && key !== answerKey && !optionMap.has(key)) optionMap.set(key, trimmed);
+      }
+
+      if (optionMap.size < 1) return [];
+      const options = [...Array.from(optionMap.values()).slice(0, 3), answer];
+      for (let index = options.length - 1; index > 0; index -= 1) {
+        const target = Math.floor(Math.random() * (index + 1));
+        [options[index], options[target]] = [options[target], options[index]];
+      }
+      return [{ ...question, correctAnswer: answer, options }];
     });
 
-    let generated: GameQuestion[] = [];
-    if (activeGameType === 'multiple_choice') {
-      generated = buildMultipleChoiceQuestions(targetSubset, INITIAL_VOCABULARY);
-    } else if (activeGameType === 'sentence_completion') {
-      generated = buildSentenceCompletionQuestions(targetSubset, INITIAL_VOCABULARY);
-    }
+    const generated = gameType === 'multiple_choice'
+      ? buildMultipleChoiceQuestions(targetSubset, pool)
+      : buildSentenceCompletionQuestions(targetSubset, pool);
 
     // Combine and shuffle
-    const combined = [...approved, ...generated].sort(() => 0.5 - Math.random());
+    const combined = [...approved, ...generated];
+    for (let index = combined.length - 1; index > 0; index -= 1) {
+      const target = Math.floor(Math.random() * (index + 1));
+      [combined[index], combined[target]] = [combined[target], combined[index]];
+    }
     return combined.slice(0, 8);
-  }, [activeGameType, currentGrade, selectedTopic, eligibleWords]);
+  };
 
   const handleStartGame = (gameType: 'match' | 'multiple_choice' | 'sentence_completion') => {
+    setSessionQuestions(gameType === 'match' ? [] : prepareQuestions(gameType));
+    setSessionKey((key) => key + 1);
     setActiveGameType(gameType);
     setActiveSessionResult(null);
   };
@@ -95,12 +128,13 @@ export const PlayView: React.FC<PlayViewProps> = ({
   };
 
   const handlePlayAgain = () => {
-    setActiveSessionResult(null);
+    if (activeGameType) handleStartGame(activeGameType);
   };
 
   const handleExitGame = () => {
     setActiveGameType(null);
     setActiveSessionResult(null);
+    setSessionQuestions([]);
   };
 
   return (
@@ -114,7 +148,8 @@ export const PlayView: React.FC<PlayViewProps> = ({
         />
       ) : activeGameType === 'match' ? (
         <MatchGame
-          words={eligibleWords.length >= 4 ? eligibleWords : INITIAL_VOCABULARY}
+          key={sessionKey}
+          words={eligibleWords}
           currentGrade={currentGrade}
           topic={selectedTopic}
           onFinishGame={handleFinishGame}
@@ -128,7 +163,8 @@ export const PlayView: React.FC<PlayViewProps> = ({
         />
       ) : activeGameType === 'multiple_choice' ? (
         <MultipleChoiceGame
-          questions={gameQuestions}
+          key={sessionKey}
+          questions={sessionQuestions}
           vocabularyMap={vocabularyMap}
           currentGrade={currentGrade}
           topic={selectedTopic}
@@ -138,7 +174,8 @@ export const PlayView: React.FC<PlayViewProps> = ({
         />
       ) : (
         <SentenceGame
-          questions={gameQuestions}
+          key={sessionKey}
+          questions={sessionQuestions}
           vocabularyMap={vocabularyMap}
           currentGrade={currentGrade}
           topic={selectedTopic}

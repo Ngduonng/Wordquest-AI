@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GameQuestion, VocabularyWord, SessionResult, GradeLevel } from '../../types/index.ts';
 import { playSuccessChime, playGentleTryAgainSound, speakEnglish } from '../../services/audio.ts';
+import { TOPICS } from '../../data/vocabulary.ts';
 import { ArrowLeft, Volume2, CheckCircle2, XCircle, ArrowRight, RotateCcw, Sparkles } from 'lucide-react';
 
 interface MultipleChoiceGameProps {
@@ -54,7 +55,7 @@ export const MultipleChoiceGame: React.FC<MultipleChoiceGameProps> = ({
           topic: currentQ.topic,
           grade: currentQ.grade
         },
-        firstAttemptCorrect
+        correct
       );
     } else {
       playGentleTryAgainSound();
@@ -104,10 +105,15 @@ export const MultipleChoiceGame: React.FC<MultipleChoiceGameProps> = ({
   if (!currentQ) {
     return (
       <div className="bg-white rounded-3xl p-8 text-center max-w-lg mx-auto">
-        <p className="text-slate-600">Đang chuẩn bị câu hỏi...</p>
+        <p className="text-slate-700 font-semibold">Chưa có câu hỏi phù hợp cho chủ đề này.</p>
+        <button onClick={onExit} className="mt-4 px-4 py-2 rounded-xl bg-amber-500 text-white font-bold text-sm">Quay lại chọn trò chơi</button>
       </div>
     );
   }
+
+  const topicLabel = vocabMeta?.categoryNameVi
+    || TOPICS.find((item) => item.id === currentQ.topic)?.nameVi
+    || currentQ.topic;
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
@@ -139,7 +145,7 @@ export const MultipleChoiceGame: React.FC<MultipleChoiceGameProps> = ({
         <div className="flex items-start justify-between gap-4">
           <div className="space-y-2">
             <span className="text-xs font-bold px-3 py-1 rounded-xl bg-amber-100 text-amber-800">
-              {currentQ.topic} · Lớp {currentQ.grade}
+              {topicLabel} · Lớp {currentQ.grade}
             </span>
             <h2 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
               {currentQ.question}

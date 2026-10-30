@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { VocabularyWord, SessionResult, GradeLevel } from '../../types/index.ts';
 import { playSuccessChime, playGentleTryAgainSound, speakEnglish } from '../../services/audio.ts';
 import { Volume2, ArrowLeft, RefreshCw, CheckCircle2, Star } from 'lucide-react';
@@ -28,8 +28,16 @@ export const MatchGame: React.FC<MatchGameProps> = ({
   onExit,
   onRecordAnswer
 }) => {
-  // Take up to 6 words for a clean, non-overwhelming matching round
-  const targetWords = words.slice(0, 6);
+  // Avoid duplicate meanings so every visible pair has one unambiguous match.
+  const targetWords = useMemo(() => {
+    const seenMeanings = new Set<string>();
+    return words.filter((word) => {
+      const meaning = word.vietnamese.trim().normalize('NFKC').toLocaleLowerCase();
+      if (!meaning || seenMeanings.has(meaning)) return false;
+      seenMeanings.add(meaning);
+      return true;
+    }).slice(0, 6);
+  }, [words]);
 
   const [leftItems, setLeftItems] = useState<MatchItem[]>([]);
   const [rightItems, setRightItems] = useState<MatchItem[]>([]);
@@ -86,7 +94,7 @@ export const MatchGame: React.FC<MatchGameProps> = ({
         }));
 
         if (targetWordObj) {
-          onRecordAnswer(targetWordObj, isFirstTry);
+          onRecordAnswer(targetWordObj, true);
         }
 
         setSelectedLeft(null);

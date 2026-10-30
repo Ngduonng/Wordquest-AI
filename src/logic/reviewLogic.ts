@@ -172,21 +172,31 @@ export function buildMultipleChoiceQuestions(
   allWordsPool: VocabularyWord[]
 ): GameQuestion[] {
   return targetWords.map((word) => {
-    // Pick 3 distractors from the pool with different meanings
-    const otherWords = allWordsPool.filter((w) => w.id !== word.id);
-    // Shuffle distractors
-    const shuffledOthers = [...otherWords].sort(() => 0.5 - Math.random());
-    const distractors = shuffledOthers.slice(0, 3).map((w) => w.vietnamese);
+    const answerKey = normalizeGameAnswer(word.vietnamese);
+    const distractors: string[] = [];
+    const seen = new Set([answerKey]);
+    const candidates = shuffleGameItems(allWordsPool.filter((item) => item.id !== word.id));
 
-    // If pool is small, provide sensible standard fallbacks
-    const fallbackDistractors = ['Quả táo', 'Bút chì', 'Con mèo', 'Quyển vở'];
-    while (distractors.length < 3) {
-      const fb = fallbackDistractors.find((f) => f !== word.vietnamese && !distractors.includes(f));
-      if (fb) distractors.push(fb);
-      else distractors.push(`Từ khác ${distractors.length + 1}`);
+    for (const candidate of candidates) {
+      const option = candidate.vietnamese.trim();
+      const key = normalizeGameAnswer(option);
+      if (!option || seen.has(key)) continue;
+      seen.add(key);
+      distractors.push(option);
+      if (distractors.length === 3) break;
     }
 
-    const options = [word.vietnamese, ...distractors.slice(0, 3)].sort(() => 0.5 - Math.random());
+    // Use classroom-friendly fallback answers only when the selected Unit has too few meanings.
+    const fallbackDistractors = ['Quả táo', 'Bút chì', 'Con mèo', 'Quyển vở'];
+    for (const fallback of fallbackDistractors) {
+      const key = normalizeGameAnswer(fallback);
+      if (distractors.length === 3) break;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      distractors.push(fallback);
+    }
+
+    const options = shuffleGameItems([word.vietnamese, ...distractors]);
 
     return {
       id: `mc_${word.id}_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
@@ -197,7 +207,9 @@ export function buildMultipleChoiceQuestions(
       options,
       correctAnswer: word.vietnamese,
       vietnameseMeaning: word.vietnamese,
-      explanationVi: `"${word.word}" có nghĩa là "${word.vietnamese}". Ví dụ: ${word.exampleEn}`,
+      explanationVi: word.exampleEn
+        ? `"${word.word}" có nghĩa là "${word.vietnamese}". Ví dụ: ${word.exampleEn}`
+        : `"${word.word}" có nghĩa là "${word.vietnamese}".`,
       grade: word.grade,
       topic: word.topic,
       hint: word.hint
@@ -212,31 +224,71 @@ export function buildSentenceCompletionQuestions(
   targetWords: VocabularyWord[],
   allWordsPool: VocabularyWord[]
 ): GameQuestion[] {
-  return targetWords.map((word) => {
-    // Create fill in the blank from example sentence
-    const regex = new RegExp(`\\b${word.word}\\b`, 'i');
-    const sentenceWithBlank = word.exampleEn.replace(regex, '______');
+  return targetWords.flatMap((word) => {
+    const sentenceWithBlank = blankVocabularyTerm(word.exampleEn, word.word);
+    if (!sentenceWithBlank) return [];
 
-    // Pick 3 distractors (English words)
-    const otherWords = allWordsPool.filter((w) => w.id !== word.id);
-    const shuffledOthers = [...otherWords].sort(() => 0.5 - Math.random());
-    const distractors = shuffledOthers.slice(0, 3).map((w) => w.word);
+    const answerKey = normalizeGameAnswer(word.word);
+    const distractors: string[] = [];
+    const seen = new Set([answerKey]);
+    const candidates = shuffleGameItems(allWordsPool.filter((item) => item.id !== word.id));
 
-    const options = [word.word, ...distractors.slice(0, 3)].sort(() => 0.5 - Math.random());
+    for (const candidate of candidates) {
+      const option = candidate.word.trim();
+      const key = normalizeGameAnswer(option);
+      if (!option || seen.has(key)) continue;
+      seen.add(key);
+      distractors.push(option);
+      if (distractors.length === 3) break;
+    }
+
+    const options = shuffleGameItems([word.word, ...distractors]);
 
     return {
       id: `sc_${word.id}_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
       wordId: word.id,
       word: word.word,
-      question: `Chọn từ thích hợp điền vào chỗ trống:\n"${sentenceWithBlank}"`,
+      question: sentenceWithBlank,
       questionType: 'sentence_completion',
       options,
       correctAnswer: word.word,
       vietnameseMeaning: word.vietnamese,
-      explanationVi: `Câu hoàn chỉnh: "${word.exampleEn}" (Nghĩa: ${word.exampleVi}).`,
+      explanationVi: word.exampleVi
+        ? `Câu hoàn chỉnh: "${word.exampleEn}" (Nghĩa: ${word.exampleVi}).`
+        : `Câu hoàn chỉnh: "${word.exampleEn}".`,
       grade: word.grade,
       topic: word.topic,
       hint: `Gợi ý: ${word.vietnamese}`
     };
   });
+}
+
+function normalizeGameAnswer(value: string): string {
+  return value.trim().normalize('NFKC').toLocaleLowerCase();
+}
+
+function shuffleGameItems<T>(items: T[]): T[] {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const target = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[target]] = [shuffled[target], shuffled[index]];
+  }
+  return shuffled;
+}
+
+function blankVocabularyTerm(sentence: string, term: string): string | null {
+  if (!sentence.trim() || !term.trim()) return null;
+
+  const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const escapedTerm = escapeRegExp(term.trim());
+  const startsWithWordCharacter = /^[\p{L}\p{N}]/u.test(term.trim());
+  const endsWithWordCharacter = /[\p{L}\p{N}]$/u.test(term.trim());
+  const pattern = `${startsWithWordCharacter ? '\\b' : ''}${escapedTerm}${endsWithWordCharacter ? '\\b' : ''}`;
+
+  try {
+    const blanked = sentence.replace(new RegExp(pattern, 'giu'), '______');
+    return blanked === sentence ? null : blanked;
+  } catch {
+    return null;
+  }
 }

@@ -1,4 +1,5 @@
 import { VocabularyWord, TopicId, GradeLevel } from '../types/index.ts';
+import CURRICULUM from './curriculum.json';
 
 export interface TopicMeta {
   id: TopicId;
@@ -259,7 +260,7 @@ export const TOPICS: TopicMeta[] = [
   }
 ];
 
-export const INITIAL_VOCABULARY: VocabularyWord[] = [
+const CURATED_VOCABULARY: VocabularyWord[] = [
   // ==================== TẬP 1: UNIT 1 - ALL ABOUT ME! ====================
   {
     id: 'u1_dolphin',
@@ -1275,4 +1276,57 @@ export const INITIAL_VOCABULARY: VocabularyWord[] = [
     level: 'challenge',
     colorScheme: { bg: 'bg-green-50', border: 'border-green-300', text: 'text-green-800' }
   }
+];
+
+const curriculumVocabulary: VocabularyWord[] = CURRICULUM.flatMap((lesson) => {
+  const topic = TOPICS.find((item) => item.id === lesson.topic);
+  const existingWords = new Set(
+    CURATED_VOCABULARY
+      .filter((item) => item.topic === lesson.topic)
+      .map((item) => item.word.trim().toLocaleLowerCase())
+  );
+
+  return lesson.vocabulary.flatMap((entry) => {
+    const separator = entry.indexOf(' — ');
+    if (separator < 0) return [];
+
+    const word = entry.slice(0, separator).trim();
+    const vietnamese = entry.slice(separator + 3).trim();
+    if (!word || !vietnamese || existingWords.has(word.toLocaleLowerCase())) return [];
+
+    const slug = word
+      .toLocaleLowerCase()
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_|_$/g, '');
+    const example = lesson.patterns.find((pattern) =>
+      pattern.example.toLocaleLowerCase().includes(word.toLocaleLowerCase())
+    );
+
+    return [{
+      id: `u${lesson.unit}_sgk_${slug}`,
+      word,
+      vietnamese,
+      phonetic: '',
+      topic: lesson.topic,
+      grade: 5 as const,
+      exampleEn: example?.example ?? '',
+      exampleVi: example?.translation ?? '',
+      hint: `Từ hoặc cụm từ trọng tâm trong Unit ${lesson.unit}.`,
+      categoryNameVi: `Unit ${lesson.unit} · ${lesson.title}`,
+      emoji: topic?.emoji ?? '📘',
+      level: 'basic' as const,
+      colorScheme: {
+        bg: 'bg-amber-50',
+        border: 'border-amber-300',
+        text: 'text-amber-800'
+      }
+    }];
+  });
+});
+
+export const INITIAL_VOCABULARY: VocabularyWord[] = [
+  ...CURATED_VOCABULARY,
+  ...curriculumVocabulary
 ];

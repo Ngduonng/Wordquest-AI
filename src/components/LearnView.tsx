@@ -349,7 +349,7 @@ export const LearnView: React.FC<LearnViewProps> = ({
                           {currentWord?.word}
                         </h2>
                         <p className="text-base sm:text-lg font-mono text-slate-500 font-semibold">
-                          {currentWord?.phonetic}
+                          {currentWord?.phonetic || 'Từ trọng tâm SGK · nhấn loa để nghe'}
                         </p>
                       </div>
 
@@ -379,27 +379,33 @@ export const LearnView: React.FC<LearnViewProps> = ({
                       </div>
 
                       {/* Example sentence */}
-                      <div className="bg-white rounded-2xl p-4 border border-amber-200/80 space-y-1.5 shadow-xs">
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold text-slate-500">Câu ví dụ:</span>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (currentWord) handleSpeak(currentWord.exampleEn);
-                            }}
-                            className="p-1 text-amber-600 hover:text-amber-700 rounded-lg hover:bg-amber-50"
-                            title="Nghe câu ví dụ"
-                          >
-                            <Volume2 className="w-4 h-4" />
-                          </button>
+                      {currentWord?.exampleEn ? (
+                        <div className="bg-white rounded-2xl p-4 border border-amber-200/80 space-y-1.5 shadow-xs">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-bold text-slate-500">Câu ví dụ:</span>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (currentWord) handleSpeak(currentWord.exampleEn);
+                              }}
+                              className="p-1 text-amber-600 hover:text-amber-700 rounded-lg hover:bg-amber-50"
+                              title="Nghe câu ví dụ"
+                            >
+                              <Volume2 className="w-4 h-4" />
+                            </button>
+                          </div>
+                          <p className="text-base sm:text-lg font-semibold text-slate-900">
+                            {currentWord?.exampleEn}
+                          </p>
+                          <p className="text-xs sm:text-sm text-slate-600 italic">
+                            {currentWord?.exampleVi}
+                          </p>
                         </div>
-                        <p className="text-base sm:text-lg font-semibold text-slate-900">
-                          {currentWord?.exampleEn}
+                      ) : (
+                        <p className="text-sm text-slate-600 bg-white rounded-2xl p-4 border border-amber-200/80">
+                          Em hãy nghe từ này rồi thử đặt một câu của riêng mình nhé.
                         </p>
-                        <p className="text-xs sm:text-sm text-slate-600 italic">
-                          {currentWord?.exampleVi}
-                        </p>
-                      </div>
+                      )}
 
                       {/* Memory Hint */}
                       <div className="text-xs text-amber-900 bg-amber-100/60 p-3 rounded-xl border border-amber-200/60">
@@ -490,9 +496,15 @@ export const LearnView: React.FC<LearnViewProps> = ({
 
                   <div className="mt-3">
                     <h3 className="font-heading text-xl font-bold text-slate-900">{word.word}</h3>
-                    <p className="text-xs font-mono text-slate-500">{word.phonetic}</p>
+                    {word.phonetic ? (
+                      <p className="text-xs font-mono text-slate-500">{word.phonetic}</p>
+                    ) : (
+                      <p className="text-[11px] font-semibold text-sky-700">Từ trọng tâm SGK</p>
+                    )}
                     <p className="text-sm font-semibold text-amber-700 mt-1">{word.vietnamese}</p>
-                    <p className="text-xs text-slate-500 mt-2 italic line-clamp-2">"{word.exampleEn}"</p>
+                    {word.exampleEn && (
+                      <p className="text-xs text-slate-500 mt-2 italic line-clamp-2">"{word.exampleEn}"</p>
+                    )}
                   </div>
                 </div>
 

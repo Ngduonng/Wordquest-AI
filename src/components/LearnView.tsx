@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GradeLevel, TopicId, VocabularyWord, WordProgress } from '../types/index.ts';
 import { TOPICS, INITIAL_VOCABULARY } from '../data/vocabulary.ts';
+import CURRICULUM from '../data/curriculum.json';
 import { speakEnglish, isSpeechSupported } from '../services/audio.ts';
 import {
   Volume2,
@@ -58,6 +59,7 @@ export const LearnView: React.FC<LearnViewProps> = ({
   }, [currentGrade, selectedTopic, bookFilter]);
 
   const currentWord: VocabularyWord | undefined = filteredWords[currentIndex];
+  const selectedLesson = CURRICULUM.find((lesson) => lesson.topic === selectedTopic);
   const currentProgress = currentWord ? progressMap[currentWord.id] : undefined;
   const isFlagged = currentProgress?.manualFlagged || currentProgress?.status === 'needs_review';
 
@@ -213,6 +215,41 @@ export const LearnView: React.FC<LearnViewProps> = ({
           ))}
         </div>
       </div>
+
+      {selectedLesson && (
+        <section className="bg-gradient-to-br from-amber-50 to-white rounded-3xl p-5 sm:p-6 border border-amber-200 shadow-xs space-y-5" aria-labelledby="lesson-guide-title">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wide text-amber-700">
+              {selectedLesson.book === 1 ? '📘 Tập một' : '📙 Tập hai'} · Unit {selectedLesson.unit}
+            </p>
+            <h2 id="lesson-guide-title" className="font-heading text-xl sm:text-2xl font-bold text-slate-900 mt-1">
+              {selectedLesson.title}: Hôm nay em sẽ học gì?
+            </h2>
+            <p className="text-sm text-slate-600 mt-1">{selectedLesson.focus}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-3">
+            {selectedLesson.patterns.map((pattern, index) => (
+              <article key={`${selectedLesson.topic}-pattern-${index}`} className="rounded-2xl bg-white border border-amber-100 p-4">
+                <p className="text-xs font-bold text-amber-700">MẪU CÂU · {index + 1}</p>
+                <p className="font-semibold text-slate-900 mt-2">{pattern.form}</p>
+                <p className="text-xs text-slate-500 mt-2">{pattern.use}</p>
+                <p className="text-sm text-sky-800 mt-3">{pattern.example}</p>
+                <p className="text-xs text-slate-600 mt-1">{pattern.translation}</p>
+              </article>
+            ))}
+          </div>
+
+          <div>
+            <h3 className="text-sm font-bold text-slate-800 mb-2">Từ và cụm từ trọng tâm</h3>
+            <div className="flex flex-wrap gap-2">
+              {selectedLesson.vocabulary.map((item) => (
+                <span key={item} className="rounded-full bg-white border border-amber-100 px-3 py-1.5 text-xs font-medium text-slate-700">{item}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {speechAlert && (
         <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-amber-900 text-xs">

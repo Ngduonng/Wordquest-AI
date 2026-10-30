@@ -1,0 +1,162 @@
+[
+  {
+    "topic": "unit1_all_about_me", "book": 1, "unit": 1, "title": "All about me!", "focus": "Giới thiệu bản thân, lớp học, nơi sống và điều em yêu thích.",
+    "patterns": [
+      {"form": "Can you tell me about yourself? — I’m in … . I live in the … .", "use": "Hỏi và giới thiệu lớp học, nơi sống.", "example": "I’m in Class 5A. I live in the city.", "translation": "Em học lớp 5A. Em sống ở thành phố."},
+      {"form": "What’s your favourite …? — It’s … .", "use": "Hỏi về điều yêu thích.", "example": "What’s your favourite sport? — It’s table tennis.", "translation": "Môn thể thao yêu thích của bạn là gì? — Đó là bóng bàn."}
+    ],
+    "vocabulary": ["city — thành phố", "class — lớp học", "countryside — vùng nông thôn", "dolphin — cá heo", "pink — màu hồng", "sandwich — bánh mì kẹp", "table tennis — bóng bàn"]
+  },
+  {
+    "topic": "unit2_our_homes", "book": 1, "unit": 2, "title": "Our homes", "focus": "Nói về nơi ở, kiểu nhà và hỏi địa chỉ.",
+    "patterns": [
+      {"form": "Do you live in this/that …? — Yes, I do. / No, I don’t.", "use": "Hỏi và trả lời về nơi ở.", "example": "Do you live in that flat? — Yes, I do.", "translation": "Bạn sống trong căn hộ kia phải không? — Đúng vậy."},
+      {"form": "What’s your address? — It’s … .", "use": "Hỏi và nêu địa chỉ.", "example": "What’s your address? — It’s 23 Green Street.", "translation": "Địa chỉ của bạn là gì? — Số 23 đường Green."}
+    ],
+    "vocabulary": ["building — tòa nhà", "flat — căn hộ", "house — ngôi nhà", "tower — tòa tháp", "fifteen — mười lăm", "sixteen — mười sáu", "address — địa chỉ"]
+  },
+  {
+    "topic": "unit3_my_foreign_friends", "book": 1, "unit": 3, "title": "My foreign friends", "focus": "Hỏi quốc tịch và mô tả tính cách bạn bè.",
+    "patterns": [
+      {"form": "What nationality is he/she? — He’s/She’s … .", "use": "Hỏi và nói về quốc tịch.", "example": "What nationality is she? — She’s Australian.", "translation": "Bạn ấy mang quốc tịch nào? — Bạn ấy là người Úc."},
+      {"form": "What’s he/she like? — He’s/She’s … .", "use": "Hỏi và mô tả tính cách.", "example": "What’s he like? — He’s friendly and helpful.", "translation": "Bạn ấy là người thế nào? — Bạn ấy thân thiện và hay giúp đỡ."}
+    ],
+    "vocabulary": ["American — người Mỹ", "Australian — người Úc", "Japanese — người Nhật", "Malaysian — người Malaysia", "active — năng động", "clever — thông minh", "friendly — thân thiện", "helpful — hay giúp đỡ"]
+  },
+  {
+    "topic": "unit4_free_time", "book": 1, "unit": 4, "title": "Our free-time activities", "focus": "Nói về sở thích lúc rảnh và hoạt động cuối tuần; dùng trạng từ tần suất.",
+    "patterns": [
+      {"form": "What do you like doing in your free time? — I like … .", "use": "Hỏi và nói về hoạt động yêu thích.", "example": "I like playing the violin.", "translation": "Em thích chơi đàn vi-ô-lông."},
+      {"form": "What do you do at the weekend? — I … .", "use": "Hỏi về hoạt động cuối tuần.", "example": "I usually go for a walk at the weekend.", "translation": "Em thường đi dạo vào cuối tuần."}
+    ],
+    "vocabulary": ["go for a walk — đi dạo", "play the violin — chơi đàn vi-ô-lông", "surf the Internet — lướt Internet", "water the flowers — tưới hoa", "always — luôn luôn", "often — thường xuyên", "sometimes — thỉnh thoảng", "usually — thường thường"]
+  },
+  {
+    "topic": "unit5_future_jobs", "book": 1, "unit": 5, "title": "My future job", "focus": "Nói về nghề nghiệp mong muốn trong tương lai và lý do lựa chọn.",
+    "patterns": [
+      {"form": "What would you like to be in the future? — I’d like to be a/an … .", "use": "Hỏi và nói về nghề nghiệp mơ ước.", "example": "I’d like to be a reporter.", "translation": "Em muốn trở thành phóng viên."},
+      {"form": "Why would you like to be a/an …? — Because I’d like to … .", "use": "Nêu lý do muốn làm nghề đó.", "example": "Because I’d like to write stories.", "translation": "Vì em muốn viết truyện."}
+    ],
+    "vocabulary": ["firefighter — lính cứu hỏa", "gardener — người làm vườn", "reporter — phóng viên", "writer — nhà văn", "grow flowers — trồng hoa", "report the news — đưa tin", "teach children — dạy trẻ em", "write stories — viết truyện"]
+  },
+  {
+    "topic": "unit6_school_rooms", "book": 1, "unit": 6, "title": "Our school rooms", "focus": "Hỏi vị trí phòng học và chỉ đường trong trường.",
+    "patterns": [
+      {"form": "Where’s the …? — It’s on the … .", "use": "Hỏi và nói vị trí phòng trong trường.", "example": "Where’s the library? — It’s on the second floor.", "translation": "Thư viện ở đâu? — Ở tầng hai."},
+      {"form": "Could you tell me the way to the …, please? — Go … .", "use": "Hỏi và chỉ đường lịch sự.", "example": "Go upstairs and go along the corridor.", "translation": "Đi lên cầu thang rồi đi dọc hành lang."}
+    ],
+    "vocabulary": ["ground floor — tầng trệt", "first floor — tầng một", "second floor — tầng hai", "third floor — tầng ba", "go along — đi dọc theo", "go downstairs — đi xuống cầu thang", "go past — đi qua", "go upstairs — đi lên cầu thang"]
+  },
+  {
+    "topic": "unit7_school_activities", "book": 1, "unit": 7, "title": "Our favourite school activities", "focus": "Hỏi về hoạt động yêu thích ở trường và giải thích lý do.",
+    "patterns": [
+      {"form": "What school activity does he/she like? — He/She likes … .", "use": "Hỏi và nói về hoạt động trường học yêu thích.", "example": "She likes reading books.", "translation": "Bạn ấy thích đọc sách."},
+      {"form": "Why does he/she like it? — Because he/she thinks it’s … .", "use": "Hỏi và giải thích sở thích.", "example": "Because she thinks it’s useful.", "translation": "Vì bạn ấy nghĩ hoạt động đó hữu ích."}
+    ],
+    "vocabulary": ["do projects — làm dự án", "play games — chơi trò chơi", "read books — đọc sách", "solve maths problems — giải bài toán", "fun — vui", "good for group work — tốt cho hoạt động nhóm", "interesting — thú vị", "useful — hữu ích"]
+  },
+  {
+    "topic": "unit8_in_classroom", "book": 1, "unit": 8, "title": "In our classroom", "focus": "Hỏi vị trí đồ dùng học tập và hỏi đồ vật thuộc về ai.",
+    "patterns": [
+      {"form": "Where are the …? — They’re … .", "use": "Hỏi vị trí của nhiều đồ vật.", "example": "Where are the crayons? — They’re beside the books.", "translation": "Bút sáp ở đâu? — Ở bên cạnh những quyển sách."},
+      {"form": "Whose … is this? — It’s …’s.", "use": "Hỏi và nói đồ vật thuộc về ai.", "example": "Whose pencil case is this? — It’s Mai’s.", "translation": "Hộp bút này của ai? — Của Mai."}
+    ],
+    "vocabulary": ["above — ở phía trên", "beside — bên cạnh", "in front of — ở phía trước", "under — ở phía dưới", "crayon — bút sáp màu", "glue stick — hồ khô", "pencil sharpener — đồ gọt bút chì", "set square — ê-ke"]
+  },
+  {
+    "topic": "unit9_outdoor_activities", "book": 1, "unit": 9, "title": "Our outdoor activities", "focus": "Hỏi một người đã ở đâu và đã làm gì hôm qua; luyện kể sự việc quá khứ.",
+    "patterns": [
+      {"form": "Were you at the … yesterday? — Yes, we were. / No, we weren’t.", "use": "Hỏi và trả lời về địa điểm hôm qua.", "example": "Were you at the campsite yesterday? — Yes, we were.", "translation": "Hôm qua các bạn ở khu cắm trại phải không? — Đúng vậy."},
+      {"form": "What did you do yesterday? — We … .", "use": "Hỏi và kể hoạt động đã làm.", "example": "We danced around the campfire.", "translation": "Chúng mình đã nhảy múa quanh lửa trại."}
+    ],
+    "vocabulary": ["aquarium — thủy cung", "campsite — khu cắm trại", "funfair — hội chợ", "theatre — nhà hát", "dance around the campfire — nhảy quanh lửa trại", "listen to music — nghe nhạc", "play chess — chơi cờ", "watch the fish — ngắm cá"]
+  },
+  {
+    "topic": "unit10_school_trip", "book": 1, "unit": 10, "title": "Our school trip", "focus": "Kể về chuyến tham quan đã qua, địa điểm đã đến và hoạt động trong chuyến đi.",
+    "patterns": [
+      {"form": "Did they go to …? — Yes, they did. / No, they didn’t.", "use": "Hỏi và trả lời về chuyến đi trong quá khứ.", "example": "Did they go to Ba Na Hills? — Yes, they did.", "translation": "Họ đã đi Bà Nà Hills phải không? — Đúng vậy."},
+      {"form": "What did they do there? — They … .", "use": "Hỏi và kể hoạt động trong chuyến đi.", "example": "They visited the old buildings.", "translation": "Họ đã thăm những tòa nhà cổ."}
+    ],
+    "vocabulary": ["Ba Na Hills — Bà Nà Hills", "Bai Dinh Pagoda — chùa Bái Đính", "Hoan Kiem Lake — hồ Hoàn Kiếm", "Suoi Tien Theme Park — công viên văn hóa Suối Tiên", "plant trees — trồng cây", "play games — chơi trò chơi", "visit old buildings — thăm các tòa nhà cổ", "walk around the lake — đi bộ quanh hồ", "November — tháng mười một", "December — tháng mười hai"]
+  },
+  {
+    "topic": "unit11_family_time", "book": 2, "unit": 11, "title": "Family time", "focus": "Hỏi gia đình đã làm gì ở một nơi trong quá khứ; dùng câu hỏi Did you/What did … do?",
+    "patterns": [
+      {"form": "Did you …? — Yes, I did. I … . / No, I didn’t.", "use": "Hỏi và trả lời về hoạt động đã làm.", "example": "Did you swim? — Yes, I did. I swam with my mother.", "translation": "Bạn đã bơi không? — Có. Mình đã bơi cùng mẹ."},
+      {"form": "What did your family do in …? — We … .", "use": "Hỏi và kể hoạt động của gia đình trong chuyến đi.", "example": "We took a boat trip around the bay.", "translation": "Gia đình mình đã đi thuyền quanh vịnh."}
+    ],
+    "vocabulary": ["buy souvenirs — mua quà lưu niệm", "collect seashells — nhặt vỏ sò", "eat seafood — ăn hải sản", "see interesting places — ngắm những nơi thú vị", "take a boat trip around the bay — đi thuyền quanh vịnh", "walk on the beach — đi dạo trên bãi biển"]
+  },
+  {
+    "topic": "unit12_tet_holiday", "book": 2, "unit": 12, "title": "Our Tet holiday", "focus": "Nói về dự định cho Tết và nơi sẽ đến trong dịp Tết.",
+    "patterns": [
+      {"form": "Will you … for Tet? — Yes, I will. / No, I won’t. I’ll … .", "use": "Hỏi và trả lời về dự định ngày Tết.", "example": "Will you make banh chung for Tet? — Yes, I will.", "translation": "Bạn sẽ gói bánh chưng dịp Tết chứ? — Có."},
+      {"form": "Where will you go at Tet? — I’ll go to … .", "use": "Hỏi nơi sẽ đến trong dịp Tết.", "example": "I’ll go to my grandparents’ house.", "translation": "Em sẽ đến nhà ông bà."}
+    ],
+    "vocabulary": ["buy roses — mua hoa hồng", "buy a branch of peach blossoms — mua một cành hoa đào", "decorate the house — trang trí nhà cửa", "do the shopping — đi mua sắm", "make banh chung — gói bánh chưng", "make spring rolls — làm nem", "fireworks show — màn bắn pháo hoa", "flower festival — lễ hội hoa", "New Year party — tiệc năm mới"]
+  },
+  {
+    "topic": "unit13_special_days", "book": 2, "unit": 13, "title": "Our special days", "focus": "Nói về dự định cho ngày đặc biệt và đồ ăn, thức uống ở bữa tiệc.",
+    "patterns": [
+      {"form": "What will you do on …? — We’ll … .", "use": "Hỏi và nói về hoạt động vào ngày đặc biệt.", "example": "We’ll have a party on Children’s Day.", "translation": "Chúng em sẽ tổ chức tiệc vào ngày Quốc tế Thiếu nhi."},
+      {"form": "What food/drinks will you have at the party? — We’ll have … .", "use": "Hỏi và nói món ăn, thức uống sẽ có.", "example": "We’ll have pizza and apple juice.", "translation": "Chúng em sẽ có pizza và nước táo."}
+    ],
+    "vocabulary": ["Mid-Autumn Festival — Tết Trung thu", "Children’s Day — ngày Quốc tế Thiếu nhi", "Sports Day — ngày hội thể thao", "Teachers’ Day — ngày Nhà giáo", "apple juice — nước táo", "burger — bánh mì kẹp thịt", "milk tea — trà sữa", "pizza — bánh pizza"]
+  },
+  {
+    "topic": "unit14_staying_healthy", "book": 2, "unit": 14, "title": "Staying healthy", "focus": "Hỏi về lối sống lành mạnh và tần suất thực hiện hoạt động.",
+    "patterns": [
+      {"form": "How does he/she stay healthy? — He/She … .", "use": "Hỏi và nói cách một người giữ gìn sức khỏe.", "example": "She eats healthy food and plays sports.", "translation": "Bạn ấy ăn thực phẩm lành mạnh và chơi thể thao."},
+      {"form": "How often does he/she …? — Every day / Once a week / … .", "use": "Hỏi tần suất hoạt động.", "example": "He does morning exercise three times a week.", "translation": "Bạn ấy tập thể dục buổi sáng ba lần một tuần."}
+    ],
+    "vocabulary": ["do morning exercise — tập thể dục buổi sáng", "do yoga — tập yoga", "drink fresh juice — uống nước ép tươi", "eat healthy food — ăn thực phẩm lành mạnh", "eat vegetables — ăn rau", "play sports — chơi thể thao", "every day — mỗi ngày", "once a week — mỗi tuần một lần", "three times a week — ba lần một tuần", "twice a week — hai lần một tuần"]
+  },
+  {
+    "topic": "unit15_our_health", "book": 2, "unit": 15, "title": "Our health", "focus": "Hỏi thăm vấn đề sức khỏe thường gặp và đưa lời khuyên đơn giản.",
+    "patterns": [
+      {"form": "What’s the matter? — I have a … .", "use": "Hỏi thăm và nói về triệu chứng.", "example": "What’s the matter? — I have a toothache.", "translation": "Bạn bị làm sao? — Mình bị đau răng."},
+      {"form": "You should … .", "use": "Đưa lời khuyên chăm sóc sức khỏe đơn giản.", "example": "You should go to the dentist.", "translation": "Bạn nên đi khám nha sĩ."}
+    ],
+    "vocabulary": ["headache — đau đầu", "sore throat — đau họng", "stomach ache — đau bụng", "toothache — đau răng", "drink warm water — uống nước ấm", "go to the dentist — đi khám nha sĩ", "have a rest — nghỉ ngơi", "take some medicine — uống thuốc"]
+  },
+  {
+    "topic": "unit16_seasons_weather", "book": 2, "unit": 16, "title": "Seasons and the weather", "focus": "Hỏi thời tiết theo mùa và nói về trang phục thường mặc.",
+    "patterns": [
+      {"form": "How’s the weather in …? — It’s … .", "use": "Hỏi và mô tả thời tiết trong mùa.", "example": "How’s the weather in autumn? — It’s cool.", "translation": "Thời tiết mùa thu thế nào? — Trời mát."},
+      {"form": "What do you usually wear in …? — I wear … .", "use": "Hỏi và nói về trang phục thường mặc theo mùa.", "example": "I usually wear a jumper in winter.", "translation": "Em thường mặc áo len vào mùa đông."}
+    ],
+    "vocabulary": ["autumn — mùa thu", "spring — mùa xuân", "summer — mùa hè", "winter — mùa đông", "cold — lạnh", "cool — mát", "hot — nóng", "warm — ấm", "blouse — áo kiểu", "jeans — quần bò", "jumper — áo len", "trousers — quần dài"]
+  },
+  {
+    "topic": "unit17_stories", "book": 2, "unit": 17, "title": "Stories for children", "focus": "Hỏi tên nhân vật trong truyện và cách nhân vật làm một việc.",
+    "patterns": [
+      {"form": "Who are the main characters in the story? — They’re … .", "use": "Hỏi và nêu nhân vật chính.", "example": "They’re Snow White and the dwarfs.", "translation": "Đó là Bạch Tuyết và những chú lùn."},
+      {"form": "How did he/she …? — He/She … .", "use": "Hỏi và kể cách nhân vật đã làm việc gì.", "example": "How did the tortoise run? — It ran slowly.", "translation": "Rùa đã chạy thế nào? — Nó chạy chậm."}
+    ],
+    "vocabulary": ["ant — con kiến", "crow — con quạ", "dwarf — chú lùn", "fox — con cáo", "grasshopper — châu chấu", "hare — thỏ rừng", "Snow White — Bạch Tuyết", "tortoise — rùa", "cook well — nấu ăn giỏi", "run fast — chạy nhanh", "sing beautifully — hát hay", "work hard — làm việc chăm chỉ"]
+  },
+  {
+    "topic": "unit18_transport", "book": 2, "unit": 18, "title": "Means of transport", "focus": "Nói nơi muốn đến thăm và hỏi đường đi bằng phương tiện nào.",
+    "patterns": [
+      {"form": "Where do you want to visit? — I want to visit … .", "use": "Hỏi và nêu nơi muốn thăm.", "example": "I want to visit Dragon Bridge.", "translation": "Em muốn thăm Cầu Rồng."},
+      {"form": "How can I get to …? — You can get there by … / on foot.", "use": "Hỏi và chỉ cách đi đến một địa điểm.", "example": "You can get there by bus.", "translation": "Bạn có thể đến đó bằng xe buýt."}
+    ],
+    "vocabulary": ["Dragon Bridge — Cầu Rồng", "Ha Noi Opera House — Nhà hát Lớn Hà Nội", "Ho Chi Minh City Museum — Bảo tàng Thành phố Hồ Chí Minh", "Ngo Mon Square — Quảng trường Ngọ Môn", "by bicycle — bằng xe đạp", "by bus — bằng xe buýt", "by taxi — bằng taxi", "on foot — đi bộ"]
+  },
+  {
+    "topic": "unit19_places_interest", "book": 2, "unit": 19, "title": "Places of interest", "focus": "Nêu cảm nghĩ về một địa điểm và hỏi khoảng cách giữa hai nơi.",
+    "patterns": [
+      {"form": "What do you think of …? — I think it’s … .", "use": "Hỏi và nêu ý kiến về địa điểm.", "example": "I think Ba Na Hills is beautiful and exciting.", "translation": "Em nghĩ Bà Nà Hills đẹp và thú vị."},
+      {"form": "How far is it from … to …? — It’s about … kilometres.", "use": "Hỏi và trả lời khoảng cách.", "example": "It’s about 40 kilometres.", "translation": "Khoảng 40 ki-lô-mét."}
+    ],
+    "vocabulary": ["beautiful — đẹp", "exciting — thú vị, hào hứng", "fantastic — tuyệt vời", "peaceful — yên bình", "29 — hai mươi chín", "40 — bốn mươi", "100 — một trăm", "129 — một trăm hai mươi chín"]
+  },
+  {
+    "topic": "unit20_summer_holidays", "book": 2, "unit": 20, "title": "Our summer holidays", "focus": "Nói nơi dự định thăm và hoạt động dự định làm trong kỳ nghỉ hè.",
+    "patterns": [
+      {"form": "Where are you going to visit this summer? — I’m going to visit … .", "use": "Hỏi và nói về điểm đến mùa hè.", "example": "I’m going to visit Phu Quoc Island.", "translation": "Em dự định đi thăm đảo Phú Quốc."},
+      {"form": "What are you going to do this summer? — I’m going to … .", "use": "Hỏi và nói về hoạt động dự định làm.", "example": "I’m going to go camping and practise swimming.", "translation": "Em dự định đi cắm trại và luyện bơi."}
+    ],
+    "vocabulary": ["Dam Sen Aquarium — thủy cung Đầm Sen", "Huong River — sông Hương", "Phong Nha Cave — động Phong Nha", "Phu Quoc Island — đảo Phú Quốc", "go camping — đi cắm trại", "join a music club — tham gia câu lạc bộ âm nhạc", "practise swimming — luyện bơi", "visit an eco-farm — thăm trang trại sinh thái"]
+  }
+]

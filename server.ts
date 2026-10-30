@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
+import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI, Type } from '@google/genai';
 
@@ -8,6 +9,20 @@ dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const CURRICULUM = JSON.parse(
+  readFileSync(path.join(__dirname, 'src', 'data', 'curriculum.json'), 'utf8')
+) as Array<{
+  topic: string;
+  book: number;
+  unit: number;
+  title: string;
+  focus: string;
+  patterns: Array<{ form: string; use: string; example: string; translation: string }>;
+  vocabulary: string[];
+}>;
+const CURRICULUM_REFERENCE = CURRICULUM.map((lesson) =>
+  `Unit ${lesson.unit} ${lesson.title}: ${lesson.focus}\n${lesson.patterns.map((pattern) => `- ${pattern.form} (${pattern.use}) Example: ${pattern.example} — ${pattern.translation}`).join('\n')}\nKey words: ${lesson.vocabulary.join('; ')}`
+).join('\n\n');
 
 const app = express();
 const port = parseInt(process.env.PORT || '3000', 10);
@@ -74,6 +89,16 @@ app.post('/api/chat', async (req, res) => {
     if (text.includes('tet') || text.includes('tết') || text.includes('banh chung')) {
       return '🌸 Trong Unit 12 (Our Tet holiday), các mẫu câu rất quen thuộc nè:\n👉 "Will you make banh chung for Tet?" (Nhà bạn có gói bánh chưng đón Tết không?)\n👉 "Yes, I will." (Có, nhà mình có gói).\n👉 "I will go to my grandparents’ house in the countryside." (Em sẽ về thăm quê ông bà).';
     }
+    const requestedUnit = text.match(/\bunit\s*(\d{1,2})\b/i);
+    const requestedLesson = requestedUnit
+      ? CURRICULUM.find((lesson) => lesson.unit === Number(requestedUnit[1]))
+      : undefined;
+    if (requestedLesson) {
+      const patterns = requestedLesson.patterns.map((pattern) =>
+        `👉 ${pattern.form}\n${pattern.example} (${pattern.translation})`
+      ).join('\n\n');
+      return `⭐ Unit ${requestedLesson.unit}: ${requestedLesson.title}\n${requestedLesson.focus}\n\n${patterns}\n\nTừ trọng tâm: ${requestedLesson.vocabulary.slice(0, 6).join(', ')}.`;
+    }
     return `🦉 Thầy Cú đã nhận được câu hỏi của em: "${message}".\n\nTiếng Anh 5 Global Success có rất nhiều từ vựng và câu chuyện hay! Em có thể hỏi thầy cách phát âm từ mới trong 20 Units, đặt câu ví dụ, hoặc cùng thầy luyện nói nhé! Em muốn luyện tiếp Unit nào?`;
   };
 
@@ -95,6 +120,9 @@ Quy tắc ứng xử và sư phạm:
 4. Luyện giao tiếp: Đặt các câu hỏi tiếng Anh ngắn (dưới 10 từ) bám sát các chủ đề Unit 1 - 20 (All about me, Our homes, My future job, Our Tet holiday, Staying healthy, Our health, Places of interest...) kèm dịch nghĩa để khuyến khích học sinh đối đáp.
 5. Ngôn ngữ: Dùng song ngữ Anh - Việt linh hoạt, câu tiếng Anh ngắn và ngữ pháp chuẩn xác. Sử dụng emoji phong phú, dễ thương (🦉, ⭐, 🌟, 👏, 🌈, 💡, 🎒).
 6. Tuyệt đối KHÔNG hỏi hay lưu trữ thông tin cá nhân của học sinh (như số điện thoại, địa chỉ nhà, tên đầy đủ). Giữ môi trường trò chuyện 100% an toàn cho trẻ em.
+
+Tài liệu kiến thức tham chiếu theo bản đồ bài học của hai tập sách (ưu tiên đúng trọng tâm, tự diễn đạt, không bịa thêm mẫu câu):
+${CURRICULUM_REFERENCE}
 `;
 
   if (!ai || !apiKey) {
@@ -247,6 +275,9 @@ Thông tin bài tập:
 - Độ khó: ${difficulty}
 - Danh sách từ vựng bắt buộc sử dụng: ${wordList.join(', ')}
 - Dạng câu hỏi: ${questionType} (multiple_choice: trắc nghiệm chọn nghĩa hoặc từ; sentence_completion: điền từ vào chỗ trống trong câu ngắn đơn giản).
+- Kiến thức tham chiếu của Unit: ${CURRICULUM.find((lesson) => lesson.topic === topic)
+      ? JSON.stringify(CURRICULUM.find((lesson) => lesson.topic === topic))
+      : 'Dựa vào mục tiêu và danh sách từ do giáo viên cung cấp.'}
 
 Yêu cầu nghiêm ngặt:
 1. Câu tiếng Anh ngắn gọn, chuẩn xác theo bài học SGK Tiếng Anh 5 Global Success.
@@ -471,6 +502,9 @@ Thông tin yêu cầu từ giáo viên:
 - Hình thức tổ chức: ${groupFormat}
 - Mức độ bài học: ${level}
 - Nhu cầu học tập cần hỗ trợ: ${supportNeeds}
+- Kiến thức tham chiếu SGK của Unit: ${CURRICULUM.find((lesson) => lesson.topic === topic)
+      ? JSON.stringify(CURRICULUM.find((lesson) => lesson.topic === topic))
+      : 'Dựa vào cấu trúc và từ vựng giáo viên cung cấp.'}
 
 Hãy thiết kế kế hoạch hoạt động chi tiết, thực tế, dễ áp dụng trên lớp học hoặc giao bài tự luyện trên máy tính bảng/điện thoại.
 `;

@@ -294,23 +294,23 @@ export function generateSampleDemoProgress(): Record<string, WordProgress> {
   const sampleConfidence: ConfidenceRecord[] = [
     {
       id: 'conf_1',
-      activityId: 'spk_intro_5a4',
-      activityTitle: 'Giới thiệu bản thân tại lớp 5A4',
+      activityId: 'spk_intro_5b4',
+      activityTitle: 'Giới thiệu bản thân tại lớp 5B4',
       activityType: 'speaking',
       beforeRating: 2, // Em cần nhiều gợi ý
       afterRating: 4, // Em tự tin trả lời
       timestamp: Date.now() - 45 * 60 * 1000,
-      studentCode: 'HS-5A4-01'
+      studentCode: 'HS-5B4-01'
     },
     {
       id: 'conf_2',
-      activityId: 'spk_family_5a4',
+      activityId: 'spk_family_5b4',
       activityTitle: 'Kể về gia đình thân yêu',
       activityType: 'speaking',
       beforeRating: 1, // Chưa tự tin
       afterRating: 3, // Ít gợi ý
       timestamp: Date.now() - 90 * 60 * 1000,
-      studentCode: 'HS-5A4-01'
+      studentCode: 'HS-5B4-01'
     },
     {
       id: 'conf_3',
@@ -320,7 +320,7 @@ export function generateSampleDemoProgress(): Record<string, WordProgress> {
       beforeRating: 2,
       afterRating: 3,
       timestamp: Date.now() - 120 * 60 * 1000,
-      studentCode: 'HS-5A4-01'
+      studentCode: 'HS-5B4-01'
     }
   ];
 

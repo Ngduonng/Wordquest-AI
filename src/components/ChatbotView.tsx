@@ -40,7 +40,7 @@ export const ChatbotView: React.FC<ChatbotViewProps> = ({
     {
       id: 'welcome_1',
       role: 'assistant',
-      text: `🦉 **Chào em! Thầy Cú Thông Thái đây!**\n\nThầy rất vui được đồng hành cùng các em học sinh Lớp 5 (đặc biệt là các bạn nhỏ Lớp 5A4, Trường TH Hữu Nghị – Hòa Bình – Phú Thọ) chinh phục toàn bộ 20 Units trong **SGK Tiếng Anh 5 Global Success (Tập 1 & Tập 2)**!\n\nEm có thể hỏi thầy:\n✨ **Giải thích từ vựng & phát âm chuẩn IPA** trong 20 Units sách giáo khoa.\n🗣️ **Luyện tập đối thoại** theo các tình huống giao tiếp lớp 5.\n📝 **Nhờ thầy sửa câu & hướng dẫn ngữ pháp** ngắn gọn, dễ nhớ.\n🌸 **Ôn tập các chủ đề**: Bản thân (Unit 1), Nghề nghiệp (Unit 5), Ngày Tết (Unit 12), Sức khỏe (Unit 15)...\n\nHôm nay em muốn luyện tập Unit nào cùng Thầy Cú?`,
+      text: `🦉 **Chào em! Thầy Cú Thông Thái đây!**\n\nThầy rất vui được đồng hành cùng các em học sinh Lớp 5 (đặc biệt là các bạn nhỏ Lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị) chinh phục toàn bộ 20 Units trong **SGK Tiếng Anh 5 Global Success (Tập 1 & Tập 2)**!\n\nEm có thể hỏi thầy:\n✨ **Giải thích từ vựng & phát âm chuẩn IPA** trong 20 Units sách giáo khoa.\n🗣️ **Luyện tập đối thoại** theo các tình huống giao tiếp lớp 5.\n📝 **Nhờ thầy sửa câu & hướng dẫn ngữ pháp** ngắn gọn, dễ nhớ.\n🌸 **Ôn tập các chủ đề**: Bản thân (Unit 1), Nghề nghiệp (Unit 5), Ngày Tết (Unit 12), Sức khỏe (Unit 15)...\n\nHôm nay em muốn luyện tập Unit nào cùng Thầy Cú?`,
       timestamp: Date.now()
     }
   ]);
@@ -262,7 +262,7 @@ export const ChatbotView: React.FC<ChatbotViewProps> = ({
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-amber-100 font-medium">
-                Trợ lý luyện từ vựng &amp; giao tiếp thân thiện · Lớp {currentGrade} (Đề tài Lớp 5A4 – TH Hữu Nghị)
+                Trợ lý luyện từ vựng &amp; giao tiếp thân thiện · Lớp {currentGrade} (Đề tài lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị)
               </p>
             </div>
           </div>

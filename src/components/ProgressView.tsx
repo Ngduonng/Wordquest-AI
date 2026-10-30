@@ -117,7 +117,7 @@ export const ProgressView: React.FC<ProgressViewProps> = ({
               Báo cáo tiến độ &amp; Sự tự tin học tập
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
-              Dữ liệu học tập thực tế của học sinh Lớp 5A4 · SGK Tiếng Anh 5 Global Success (Tập 1 &amp; Tập 2)
+              Dữ liệu học tập thực tế của học sinh Lớp 5B4 · SGK Tiếng Anh 5 Global Success (Tập 1 &amp; Tập 2)
             </p>
           </div>
         </div>
@@ -243,7 +243,7 @@ export const ProgressView: React.FC<ProgressViewProps> = ({
             </div>
             <div>
               <h2 className="font-heading text-xl font-bold text-slate-900">
-                Chỉ số sự tự tin do học sinh tự đánh giá (Lớp 5A4)
+                Chỉ số sự tự tin do học sinh tự đánh giá (Lớp 5B4)
               </h2>
               <p className="text-xs text-slate-500">
                 Thang đo 4 mức độ (1-Chưa tự tin ➔ 4-Rất tự tin), đánh giá trước và sau mỗi lượt Speaking Quest
@@ -307,7 +307,7 @@ export const ProgressView: React.FC<ProgressViewProps> = ({
                     <div>
                       <span className="font-bold text-slate-900 block">{rec.activityTitle}</span>
                       <span className="text-[11px] text-slate-400">
-                        {new Date(rec.timestamp).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })} · {rec.studentCode || 'HS Lớp 5A4'}
+                        {new Date(rec.timestamp).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })} · {rec.studentCode || 'HS Lớp 5B4'}
                       </span>
                     </div>
 
@@ -444,7 +444,7 @@ export const ProgressView: React.FC<ProgressViewProps> = ({
       <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-slate-500 text-xs flex items-center gap-2">
         <ShieldCheck className="w-4 h-4 text-slate-400 shrink-0" />
         <span>
-          Báo cáo phục vụ mục đích tự theo dõi tiến bộ cá nhân của học sinh và điều chỉnh kế hoạch giảng dạy của giáo viên tiếng Anh lớp 5A4. Không dùng để xếp hạng hay áp lực điểm số.
+          Báo cáo phục vụ mục đích tự theo dõi tiến bộ cá nhân của học sinh và điều chỉnh kế hoạch giảng dạy của giáo viên tiếng Anh lớp 5B4. Không dùng để xếp hạng hay áp lực điểm số.
         </span>
       </div>
     </div>

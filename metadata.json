@@ -1,6 +1,6 @@
 {
   "name": "WordQuest AI",
-  "description": "Nền tảng luyện tập tiếng Anh chuẩn SGK Tiếng Anh 5 Global Success (Tập 1 & Tập 2) dành cho học sinh Lớp 5A4, Trường Tiểu học Hữu Nghị với phương pháp học qua hình ảnh, luyện nói và trò chơi tương tác.",
+  "description": "Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

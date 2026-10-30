@@ -52,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 hidden sm:block font-medium">
-                Lớp 5A4 · TH Hữu Nghị · Học qua hình ảnh &amp; giao tiếp
+                Lớp 5B4 · Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị · Học qua hình ảnh &amp; giao tiếp
               </p>
             </div>
           </button>

@@ -41,11 +41,11 @@ export const TeacherStudioView: React.FC<TeacherStudioViewProps> = ({
   const [activeTab, setActiveTab] = useState<'activity_designer' | 'question_generator'>('activity_designer');
 
   // ---------- ACTIVITY DESIGNER STATES ----------
-  const [planTopic, setPlanTopic] = useState('School Life & Class 5A4');
-  const [planTopicVi, setPlanTopicVi] = useState('Đời sống học đường & Lớp 5A4');
-  const [className, setClassName] = useState('Lớp 5A4 – Trường TH Hữu Nghị');
-  const [planObjective, setPlanObjective] = useState('Học sinh tự tin giới thiệu bản thân, lớp học 5A4 và mô tả hoạt động thường nhật.');
-  const [planTargetLanguage, setPlanTargetLanguage] = useState('I am in class 5A4 at Huu Nghi Primary School. My favourite subject is English.');
+  const [planTopic, setPlanTopic] = useState('School Life & Class 5B4');
+  const [planTopicVi, setPlanTopicVi] = useState('Đời sống học đường & Lớp 5B4');
+  const [className, setClassName] = useState('Lớp 5B4 – Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị');
+  const [planObjective, setPlanObjective] = useState('Học sinh tự tin giới thiệu bản thân, lớp học 5B4 và mô tả hoạt động thường nhật.');
+  const [planTargetLanguage, setPlanTargetLanguage] = useState('I am in class 5B4 at Song Da Primary School - Huu Nghi Campus. My favourite subject is English.');
   const [planDuration, setPlanDuration] = useState('15 phút');
   const [planGroupFormat, setPlanGroupFormat] = useState<'Cá nhân' | 'Cặp đôi' | 'Nhóm 4' | 'Cả lớp'>('Cặp đôi');
   const [planLevel, setPlanLevel] = useState<LearningLevel>('practice');
@@ -111,7 +111,7 @@ export const TeacherStudioView: React.FC<TeacherStudioViewProps> = ({
       if (data.success && data.plan) {
         setActivityPlan(data.plan);
         if (data.isFallback) {
-          setNotice(data.notice || 'Đã áp dụng mẫu kế hoạch hoạt động chuẩn sư phạm cho Lớp 5A4.');
+          setNotice(data.notice || 'Đã áp dụng mẫu kế hoạch hoạt động chuẩn sư phạm cho Lớp 5B4.');
         } else {
           setNotice('Gemini AI đã thiết kế thành công kế hoạch hoạt động cá nhân hóa!');
         }
@@ -139,8 +139,8 @@ export const TeacherStudioView: React.FC<TeacherStudioViewProps> = ({
     if (!activityPlan) return;
     const content = `
 # KẾ HOẠCH HOẠT ĐỘNG TIẾNG ANH CÁ NHÂN HÓA
-**Đề tài:** Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa
-**Đối tượng:** ${activityPlan.className} · Trường Tiểu học Hữu Nghị – Hòa Bình – Phú Thọ
+**Đề tài:** Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
+**Đối tượng:** ${activityPlan.className}
 **Chủ đề:** ${activityPlan.topicVi} (${activityPlan.topic})
 **Thời lượng:** ${activityPlan.duration} · **Hình thức:** ${activityPlan.groupFormat}
 **Mức độ:** ${activityPlan.level}
@@ -184,7 +184,7 @@ ${activityPlan.differentiationSupport}
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Ke_hoach_hoat_dong_lop5A4_${activityPlan.topic.toLowerCase().replace(/\s+/g, '_')}.md`;
+    a.download = `Ke_hoach_hoat_dong_lop5B4_${activityPlan.topic.toLowerCase().replace(/\s+/g, '_')}.md`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -311,7 +311,7 @@ ${activityPlan.differentiationSupport}
                 Teacher Studio – Không gian Giáo viên
               </h1>
               <p className="text-xs sm:text-sm text-slate-500 font-medium">
-                Đề tài dự thi 2026: Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa · Lớp 5A4, Trường TH Hữu Nghị
+                Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
               </p>
             </div>
           </div>
@@ -362,7 +362,7 @@ ${activityPlan.differentiationSupport}
                   <span>Thiết lập thông số thiết kế hoạt động cá nhân hóa</span>
                 </h2>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Tạo kế hoạch hoạt động bài bản gồm 9 tiêu chí sư phạm phục vụ nghiên cứu tại Lớp 5A4
+                  Tạo kế hoạch hoạt động bài bản gồm 9 tiêu chí sư phạm phục vụ nghiên cứu tại Lớp 5B4
                 </p>
               </div>
 
@@ -672,7 +672,7 @@ ${activityPlan.differentiationSupport}
               <div className="space-y-1.5">
                 <label className="text-xs font-bold text-slate-700">Khối lớp &amp; Đối tượng:</label>
                 <div className="py-2 px-3 rounded-xl text-xs font-bold bg-amber-50 border border-amber-300 text-amber-900 flex items-center justify-between">
-                  <span>Lớp 5 (Lớp 5A4 · TH Hữu Nghị)</span>
+                  <span>Lớp 5 (Lớp 5B4 · Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị)</span>
                   <span className="text-[11px] bg-amber-200/80 px-2 py-0.5 rounded-md">Global Success</span>
                 </div>
               </div>

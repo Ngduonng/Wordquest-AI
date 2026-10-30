@@ -179,7 +179,7 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
         beforeRating: preConfidence,
         afterRating,
         timestamp: Date.now(),
-        studentCode: 'HS-5A4'
+        studentCode: 'HS-5B4'
       };
       saveConfidenceRecord(record);
     }
@@ -203,10 +203,10 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
               <span className="text-3xl">🗣️</span>
               <div>
                 <h1 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900">
-                  Speaking Quest – Luyện giao tiếp tiếng Anh Lớp 5A4
+                  Speaking Quest – Luyện giao tiếp tiếng Anh Lớp 5B4
                 </h1>
                 <p className="text-xs sm:text-sm text-slate-500 font-medium">
-                  Trường Tiểu học Hữu Nghị – Thực hành đối đáp hội thoại, tăng phản xạ và bồi dưỡng sự tự tin
+                  Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị – Thực hành đối đáp hội thoại, tăng phản xạ và bồi dưỡng sự tự tin
                 </p>
               </div>
             </div>
@@ -388,7 +388,7 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
           <div className="bg-white rounded-3xl p-6 border-2 border-amber-300 shadow-md space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-heading font-bold text-slate-800 text-sm">
-                Lượt của em (Học sinh 5A4):
+                Lượt của em (Học sinh 5B4):
               </span>
               <span className="text-[11px] text-slate-400">
                 {speechSupported ? 'Nói vào Micro hoặc chọn câu bên dưới' : 'Chọn câu trả lời mẫu'}
@@ -542,7 +542,7 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
               Chúc mừng em đã hoàn thành Speaking Quest!
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 font-medium">
-              Chủ đề: {selectedScenario?.titleVi} · Lớp 5A4, Trường TH Hữu Nghị
+              Chủ đề: {selectedScenario?.titleVi} · Lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
             </p>
           </div>
 

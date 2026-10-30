@@ -202,7 +202,7 @@ export default function App() {
             WordQuest AI · Nền tảng luyện tập tiếng Anh chuẩn SGK Tiếng Anh 5 Global Success (Tập 1 &amp; Tập 2)
           </p>
           <p className="text-[11px] text-slate-400">
-            Phục vụ đề tài: Lớp 5A4, Trường TH Hữu Nghị – Hòa Bình – Phú Thọ. Công cụ hỗ trợ giáo dục, không thay thế giáo viên.
+            Phục vụ đề tài: Lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị. Công cụ hỗ trợ giáo dục, không thay thế giáo viên.
           </p>
         </div>
       </footer>

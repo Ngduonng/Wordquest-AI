@@ -2,16 +2,16 @@ import { SpeakingScenario } from '../types/index.ts';
 
 export const SPEAKING_SCENARIOS: SpeakingScenario[] = [
   {
-    id: 'spk_intro_5a4',
+    id: 'spk_intro_5b4',
     title: 'Self-Introduction & Favourite Things (Unit 1)',
-    titleVi: 'Giới thiệu bản thân & Điều yêu thích (Lớp 5A4)',
+    titleVi: 'Giới thiệu bản thân & Điều yêu thích (Lớp 5B4)',
     emoji: '🐬',
     grade: 5,
     topic: 'unit1_all_about_me',
     level: 'basic',
-    learningObjective: 'Học sinh tự tin giới thiệu tên, lớp 5A4, nơi ở (city/countryside) và con vật/môn thể thao yêu thích.',
-    situationEn: 'You are introducing yourself to teacher and friends in English class 5A4 at Huu Nghi Primary School.',
-    situationVi: 'Em đang tự giới thiệu bản thân trước thầy cô và các bạn mới tại lớp 5A4, Trường TH Hữu Nghị.',
+    learningObjective: 'Học sinh tự tin giới thiệu tên, lớp 5B4, nơi ở (city/countryside) và con vật/môn thể thao yêu thích.',
+    situationEn: 'You are introducing yourself to teacher and friends in English class 5B4 at Song Da Primary School - Huu Nghi Campus.',
+    situationVi: 'Em đang tự giới thiệu bản thân trước thầy cô và các bạn mới tại lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị.',
     partnerName: 'Teacher Emily',
     turns: [
       {
@@ -19,13 +19,13 @@ export const SPEAKING_SCENARIOS: SpeakingScenario[] = [
         partnerPrompt: 'Hello! Can you tell me a little bit about yourself?',
         partnerPromptVi: 'Xin chào! Em có thể giới thiệu một chút về bản thân mình được không?',
         promptSpeaker: 'Teacher Emily',
-        suggestedResponse: 'Hello! My name is Nam. I am in Class 5A4 at Huu Nghi Primary School.',
-        responseVi: 'Xin chào cô! Tên em là Nam. Em học lớp 5A4 tại trường Tiểu học Hữu Nghị.',
-        targetKeywords: ['name', 'class', '5a4', 'primary', 'school', 'huu nghi'],
-        grammarFrame: 'Hello! My name is [Tên]. I am in Class 5A4.',
-        hintsVi: ['Chào cô giáo (Hello / Hi)', 'Nói tên em: My name is...', 'Nói lớp: I am in Class 5A4 at Huu Nghi Primary School.'],
+        suggestedResponse: 'Hello! My name is Nam. I am in Class 5B4 at Song Da Primary School - Huu Nghi Campus.',
+        responseVi: 'Xin chào cô! Tên em là Nam. Em học lớp 5B4 tại Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị.',
+        targetKeywords: ['name', 'class', '5b4', 'primary', 'school', 'huu nghi'],
+        grammarFrame: 'Hello! My name is [Tên]. I am in Class 5B4.',
+        hintsVi: ['Chào cô giáo (Hello / Hi)', 'Nói tên em: My name is...', 'Nói lớp: I am in Class 5B4 at Song Da Primary School - Huu Nghi Campus.'],
         options: [
-          'Hello! My name is Nam. I am in Class 5A4 at Huu Nghi Primary School.',
+          'Hello! My name is Nam. I am in Class 5B4 at Song Da Primary School - Huu Nghi Campus.',
           'Good morning! I like reading English stories.',
           'Hi! I live in the city with my parents.'
         ]
@@ -65,7 +65,7 @@ export const SPEAKING_SCENARIOS: SpeakingScenario[] = [
     ]
   },
   {
-    id: 'spk_our_homes_5a4',
+    id: 'spk_our_homes_5b4',
     title: 'Talking about Homes and Address (Unit 2)',
     titleVi: 'Hỏi đáp về nơi ở & Địa chỉ (Unit 2)',
     emoji: '🏡',

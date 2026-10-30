@@ -52,7 +52,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
   return (
     <div className="space-y-8 pb-12">
-      {/* Contest Identification & Class 5A4 Banner */}
+      {/* Contest Identification & Class 5B4 Banner */}
       <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-3xl p-5 sm:p-7 shadow-sm border border-indigo-700/40 space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="inline-flex items-center gap-2 bg-amber-400/20 text-amber-300 border border-amber-400/30 px-3 py-1 rounded-full text-xs font-bold tracking-wide">
@@ -62,17 +62,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
           <div className="flex items-center gap-2">
             <span className="text-xs bg-white/10 px-3 py-1 rounded-full text-slate-200 font-medium">
-              Lớp 5A4 · Trường TH Hữu Nghị – Hòa Bình – Phú Thọ
+              Lớp 5B4 · Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
             </span>
           </div>
         </div>
 
         <div>
           <h1 className="font-heading text-lg sm:text-2xl font-bold tracking-tight text-white leading-snug">
-            Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa
+            Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 font-normal mt-1 leading-relaxed">
-            Nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5A4, Trường Tiểu học Hữu Nghị.
+            Không gian luyện tiếng Anh qua hình ảnh, hội thoại và trò chơi dành cho học sinh lớp 5B4.
           </p>
         </div>
       </div>
@@ -184,7 +184,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="flex items-center gap-2">
             <Layers className="w-5 h-5 text-amber-600" />
             <h3 className="font-heading text-lg sm:text-xl font-bold text-slate-900">
-              3 Cấp độ cá nhân hóa phù hợp mọi học sinh Lớp 5A4
+              3 Cấp độ cá nhân hóa phù hợp mọi học sinh Lớp 5B4
             </h3>
           </div>
           <span className="text-xs font-bold text-slate-400 hidden sm:inline">Phân hóa theo năng lực</span>
@@ -237,7 +237,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="space-y-3 max-w-xl z-10">
           <div className="inline-flex items-center gap-1.5 bg-white/20 px-3 py-1 rounded-full text-xs font-bold">
             <Mic className="w-3.5 h-3.5" />
-            <span>KHÔNG GIAN LUYỆN NÓI GIAO TIẾP DÀNH RIÊNG CHO LỚP 5A4</span>
+            <span>KHÔNG GIAN LUYỆN NÓI GIAO TIẾP DÀNH RIÊNG CHO LỚP 5B4</span>
           </div>
 
           <h3 className="font-heading text-2xl sm:text-3xl font-bold leading-snug">
@@ -245,7 +245,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </h3>
 
           <p className="text-xs sm:text-sm text-emerald-100 leading-relaxed">
-            Học sinh được trải nghiệm 4 tình huống gần gũi: Giới thiệu bản thân tại trường Hữu Nghị, kể về gia đình,
+            Học sinh được trải nghiệm 4 tình huống gần gũi: Giới thiệu bản thân tại Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị, kể về gia đình,
             mua đồ ăn tại căng tin và miêu tả tranh lớp học. Hỗ trợ tự đánh giá sự tự tin trước và sau khi nói!
           </p>
 
@@ -498,7 +498,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             Nguyên tắc đạo đức nghiên cứu &amp; an toàn sư phạm:
           </span>
           <p className="text-amber-800 leading-relaxed">
-            Ứng dụng tôn trọng quyền riêng tư tuyệt đối của học sinh lớp 5A4: Không thu thập họ tên đầy đủ,
+            Ứng dụng tôn trọng quyền riêng tư tuyệt đối của học sinh lớp 5B4: Không thu thập họ tên đầy đủ,
             ngày sinh, hay số điện thoại; dữ liệu phát âm chỉ xử lý trực tiếp trên trình duyệt (không lưu bản ghi âm).
             AI đóng vai trò trợ lý hỗ trợ giáo viên thiết kế hoạt động, không thay thế vai trò chủ đạo của thầy cô.
           </p>

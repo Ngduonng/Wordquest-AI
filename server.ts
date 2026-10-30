@@ -61,7 +61,7 @@ app.get('/api/health', (_req, res) => {
 });
 
 /**
- * Gemini Chatbot endpoint for elementary students (Class 5A4, Huu Nghi Primary School)
+ * Gemini Chatbot endpoint for elementary students (Class 5B4, Song Da Primary School - Huu Nghi Campus)
  * Model: gemini-3.8-flash
  */
 app.post('/api/chat', async (req, res) => {
@@ -77,8 +77,8 @@ app.post('/api/chat', async (req, res) => {
     if (text.includes('chào') || text.includes('hello') || text.includes('hi')) {
       return '🦉 Hello em! Thầy Cú rất vui được gặp em! Hôm nay em muốn cùng thầy chinh phục Unit nào trong SGK Tiếng Anh 5 Global Success (Tập 1 & Tập 2) nè?';
     }
-    if (text.includes('classmate') || text.includes('5a4') || text.includes('lớp')) {
-      return '🏫 "Classmate" /ˈklɑːsmeɪt/ nghĩa là "bạn cùng lớp".\n\nVí dụ câu rất hay cho lớp 5A4 của chúng mình nè:\n👉 "My classmates in 5A4 are friendly and kind." (Các bạn cùng lớp 5A4 của em rất thân thiện và tốt bụng).\n\nEm hãy thử đọc to câu này nhé!';
+    if (text.includes('classmate') || text.includes('5b4') || text.includes('lớp')) {
+      return '🏫 "Classmate" /ˈklɑːsmeɪt/ nghĩa là "bạn cùng lớp".\n\nVí dụ câu rất hay cho lớp 5B4 của chúng mình nè:\n👉 "My classmates in 5B4 are friendly and kind." (Các bạn cùng lớp 5B4 của em rất thân thiện và tốt bụng).\n\nEm hãy thử đọc to câu này nhé!';
     }
     if (text.includes('sửa') || text.includes('i likes') || text.includes('ngữ pháp')) {
       return '🌟 Khen ngợi em đã rất chăm chỉ đặt câu! Thầy Cú phát hiện một điểm nhỏ cần chỉnh nè:\n\n❌ Câu cũ: "I likes playing table tennis."\n✅ Câu chuẩn: "I like playing table tennis." (Unit 1)\n\n💡 Mẹo nhớ: Với chủ ngữ "I" (tôi), động từ "like" giữ nguyên thể, không thêm "s" em nhé!';
@@ -104,7 +104,7 @@ app.post('/api/chat', async (req, res) => {
 
   const systemInstruction = `
 Bạn là 'Thầy Cú Thông Thái' (Wise Owl Tutor) - trợ lý gia sư AI tiếng Anh thân thiện, nhiệt tình của ứng dụng WordQuest AI.
-Đối tượng người học: Học sinh Lớp 5 (đặc biệt là các em học sinh Lớp 5A4, Trường Tiểu học Hữu Nghị – Hòa Bình – Phú Thọ).
+Đối tượng người học: Học sinh Lớp 5 (đặc biệt là các em học sinh Lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị).
 Khung chương trình: Toàn bộ 20 Units trong SGK Tiếng Anh 5 Global Success (Tập 1 & Tập 2) của Bộ Giáo dục và Đào tạo.
 
 Quy tắc ứng xử và sư phạm:
@@ -382,17 +382,17 @@ Yêu cầu nghiêm ngặt:
 
 /**
  * Teacher Studio: AI Activity Designer for Personalized Learning
- * Phục vụ đề tài: Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa
- * Lớp 5A4, Trường Tiểu học Hữu Nghị – Hòa Bình – Phú Thọ
+ * Phục vụ đề tài: Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
+ * Lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
  */
 app.post('/api/gemini/design-activity', async (req, res) => {
   const {
-    topic = 'School Life & Class 5A4',
-    topicVi = 'Đời sống học đường & Lớp 5A4',
+    topic = 'School Life & Class 5B4',
+    topicVi = 'Đời sống học đường & Lớp 5B4',
     grade = 5,
-    className = 'Lớp 5A4 – Trường TH Hữu Nghị',
+    className = 'Lớp 5B4 – Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị',
     learningObjective = 'Học sinh tự tin giới thiệu bản thân, lớp học và mô tả hoạt động thường nhật.',
-    targetLanguage = 'I am in class 5A4. My favourite subject is...',
+    targetLanguage = 'I am in class 5B4. My favourite subject is...',
     duration = '15 phút',
     groupFormat = 'Cặp đôi',
     level = 'practice',
@@ -428,7 +428,7 @@ app.post('/api/gemini/design-activity', async (req, res) => {
         {
           step: 1,
           title: 'Khởi động & Kích hoạt từ vựng (Warm-up)',
-          instructions: 'Giáo viên chiếu hình ảnh lớp học 5A4 hoặc đồ vật thân quen, học sinh gọi tên nhanh từ tiếng Anh (Word Splash).',
+          instructions: 'Giáo viên chiếu hình ảnh lớp học 5B4 hoặc đồ vật thân quen, học sinh gọi tên nhanh từ tiếng Anh (Word Splash).',
           durationMinutes: 3
         },
         {
@@ -456,7 +456,7 @@ app.post('/api/gemini/design-activity', async (req, res) => {
         'Đọc to câu trả lời của mình trước nhóm hoặc lớp.'
       ],
       keyVocabulary: [
-        { word: 'Class 5A4', meaningVi: 'Lớp 5A4', example: 'I study in Class 5A4 at Huu Nghi Primary School.' },
+        { word: 'Class 5B4', meaningVi: 'Lớp 5B4', example: 'I study in Class 5B4 at Song Da Primary School - Huu Nghi Campus.' },
         { word: 'Primary School', meaningVi: 'Trường tiểu học', example: 'Our primary school has a large green yard.' },
         { word: 'Favourite subject', meaningVi: 'Môn học yêu thích', example: 'My favourite subject is English.' },
         { word: 'Classmate', meaningVi: 'Bạn cùng lớp', example: 'My classmates are very friendly and kind.' }
@@ -466,7 +466,7 @@ app.post('/api/gemini/design-activity', async (req, res) => {
         practice: 'Cung cấp từ khóa gợi ý và khung cấu trúc; học sinh tự ghép thành câu nói hoàn chỉnh.',
         challenge: 'Học sinh phản xạ không cần nhìn gợi ý, mở rộng thêm 1 câu hỏi hoặc lý do (because...).'
       },
-      positiveErrorHandling: 'Không ngắt lời khi học sinh đang nói. Khen ngợi nỗ lực giao tiếp trước ("Great try! I understood your idea."), sau đó nhắc lại câu chuẩn xác nhẹ nhàng ("Listen: I am in class 5A4, repeat with me!").',
+      positiveErrorHandling: 'Không ngắt lời khi học sinh đang nói. Khen ngợi nỗ lực giao tiếp trước ("Great try! I understood your idea."), sau đó nhắc lại câu chuẩn xác nhẹ nhàng ("Listen: I am in class 5B4, repeat with me!").',
       successCriteria: [
         'Học sinh tham gia đối đáp ít nhất 1 lượt hoàn chỉnh.',
         'Sử dụng đúng cấu trúc trọng tâm ít nhất 80%.',
@@ -484,14 +484,14 @@ app.post('/api/gemini/design-activity', async (req, res) => {
       success: true,
       plan,
       isFallback: true,
-      notice: 'Kế hoạch hoạt động chuẩn sư phạm đã được tạo sẵn sàng (Đề tài Lớp 5A4 – TH Hữu Nghị).'
+      notice: 'Kế hoạch hoạt động chuẩn sư phạm đã được tạo sẵn sàng (Đề tài lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị).'
     });
   }
 
   try {
     const prompt = `
 Bạn là chuyên gia sư phạm tiếng Anh tiểu học và EdTech thiết kế hoạt động học tập cá nhân hóa.
-Dự án: "Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5A4, Trường Tiểu học Hữu Nghị – Hòa Bình – Phú Thọ".
+Dự án: "Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị".
 
 Thông tin yêu cầu từ giáo viên:
 - Khối lớp: Lớp ${grade} (${className})
@@ -612,7 +612,7 @@ Hãy thiết kế kế hoạch hoạt động chi tiết, thực tế, dễ áp 
       success: true,
       plan,
       isFallback: true,
-      notice: 'Đã tạo kế hoạch hoạt động chuẩn sư phạm theo khung nghiên cứu lớp 5A4.'
+      notice: 'Đã tạo kế hoạch hoạt động chuẩn sư phạm theo khung nghiên cứu lớp 5B4.'
     });
   }
 });

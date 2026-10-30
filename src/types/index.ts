@@ -1,7 +1,7 @@
 /**
  * Types and interfaces for WordQuest AI
- * Đề tài: Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa
- * Lớp 5A4, Trường Tiểu học Hữu Nghị – Hòa Bình – Phú Thọ
+ * Đề tài: Ứng dụng AI trong thiết kế hoạt động học tiếng Anh cá nhân hóa nhằm tăng hứng thú học tập và sự tự tin trong giao tiếp cho học sinh lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
+ * Lớp 5B4, Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị
  */
 
 export type GradeLevel = 5;
@@ -128,7 +128,7 @@ export interface ConfidenceRecord {
   beforeRating: ConfidenceScale; // 1: Chưa tự tin, 2: Cần nhiều gợi ý, 3: Ít gợi ý, 4: Rất tự tin
   afterRating: ConfidenceScale;
   timestamp: number;
-  studentCode: string; // e.g. "HS-5A4-01" or "Ẩn danh"
+  studentCode: string; // e.g. "HS-5B4-01" or "Ẩn danh"
 }
 
 // ---------------- TEACHER AI ACTIVITY DESIGNER TYPES ----------------
@@ -137,7 +137,7 @@ export interface TeacherActivityPlan {
   topic: string;
   topicVi: string;
   grade: GradeLevel;
-  className: string; // Default: "5A4 - Trường TH Hữu Nghị"
+  className: string; // Default: "5B4 - Trường Tiểu học Sông Đà- Phân hiệu Hữu Nghị"
   learningObjective: string;
   targetLanguage: string;
   duration: string; // e.g. "15 phút", "1 tiết học (35 phút)"

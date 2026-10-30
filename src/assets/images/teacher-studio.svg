@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="teacherBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef2ff"/>
+      <stop offset="100%" stop-color="#e0e7ff"/>
+    </linearGradient>
+    <linearGradient id="teacherBlouse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#3730a3"/>
+    </linearGradient>
+    <linearGradient id="tabletGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean rounded card background -->
+  <rect x="0" y="0" width="320" height="240" rx="24" fill="url(#teacherBg)"/>
+
+  <!-- Subtle whiteboard / lesson board in background -->
+  <rect x="24" y="24" width="130" height="90" rx="12" fill="#ffffff" stroke="#c7d2fe" stroke-width="2"/>
+  <!-- Lesson plan graphic on board -->
+  <line x1="36" y1="42" x2="100" y2="42" stroke="#6366f1" stroke-width="4" stroke-linecap="round"/>
+  <line x1="36" y1="56" x2="120" y2="56" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round"/>
+  <line x1="36" y1="70" x2="90" y2="70" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round"/>
+  <line x1="36" y1="84" x2="110" y2="84" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="134" cy="44" r="8" fill="#facc15" />
+
+  <!-- Stack of books on desk (left) -->
+  <rect x="30" y="196" width="70" height="12" rx="3" fill="#ef4444" />
+  <rect x="36" y="184" width="60" height="12" rx="3" fill="#3b82f6" />
+  <rect x="42" y="172" width="50" height="12" rx="3" fill="#10b981" />
+  <!-- Apple on top of books -->
+  <circle cx="67" cy="162" r="9" fill="#dc2626" />
+  <path d="M 67 153 C 69 148 72 147 75 146" stroke="#78350f" stroke-width="1.5" fill="none"/>
+
+  <!-- Teacher Character (Right) -->
+  <!-- Long dark hair -->
+  <path d="M 195 90 C 195 44 265 44 265 90 C 275 125 270 180 260 190 C 250 190 248 160 248 140 C 212 140 210 160 200 190 C 190 180 185 125 195 90 Z" fill="#1e1b4b" />
+
+  <!-- Head -->
+  <circle cx="230" cy="94" r="30" fill="#fcd34d" />
+  <!-- Hair bangs -->
+  <path d="M 204 90 C 204 68 256 68 256 90 C 244 80 236 82 230 78 C 224 82 216 80 204 90 Z" fill="#1e1b4b" />
+
+  <!-- Eyes - Friendly sparkling -->
+  <circle cx="218" cy="94" r="3" fill="#1e293b" />
+  <circle cx="217" cy="92.5" r="1" fill="#ffffff" />
+  <circle cx="242" cy="94" r="3" fill="#1e293b" />
+  <circle cx="241" cy="92.5" r="1" fill="#ffffff" />
+
+  <!-- Gentle warm smile -->
+  <path d="M 224 104 Q 230 110 236 104" stroke="#b91c1c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Rosy Cheeks -->
+  <circle cx="210" cy="101" r="4.5" fill="#fb7185" opacity="0.6"/>
+  <circle cx="250" cy="101" r="4.5" fill="#fb7185" opacity="0.6"/>
+
+  <!-- Professional Teacher Blouse / Ao dai collar -->
+  <path d="M 188 220 C 188 145 272 145 272 220 Z" fill="url(#teacherBlouse)" />
+  <polygon points="230,124 220,146 240,146" fill="#ffffff" />
+
+  <!-- Teacher holding Digital Interactive Tablet -->
+  <rect x="156" y="148" width="84" height="64" rx="8" fill="#1e293b" transform="rotate(-8 156 148)" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.15))"/>
+  <rect x="162" y="154" width="72" height="52" rx="4" fill="url(#tabletGrad)" transform="rotate(-8 162 154)"/>
+
+  <!-- Sparkles of AI Inspiration from tablet -->
+  <polygon points="144,128 147,134 153,134 148,138 150,144 144,140 138,144 140,138 135,134 141,134" fill="#facc15"/>
+  <polygon points="280,70 282,75 287,75 283,78 285,83 280,80 275,83 277,78 273,75 278,75" fill="#38bdf8"/>
+  <polygon points="172,92 174,96 178,96 175,99 176,103 172,100 168,103 169,99 166,96 170,96" fill="#f59e0b"/>
+</svg>

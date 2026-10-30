@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="catGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="catBelly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#ffedd5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Backdrop soft circle -->
+  <circle cx="100" cy="100" r="90" fill="#fff7ed" />
+  <circle cx="100" cy="100" r="82" fill="#ffedd5" opacity="0.6"/>
+
+  <!-- Tail -->
+  <path d="M 145 145 C 175 140 185 110 175 90 C 168 85 160 92 165 105 C 170 120 160 135 135 142 Z" fill="#ea580c" />
+
+  <!-- Body -->
+  <ellipse cx="100" cy="125" rx="52" ry="55" fill="url(#catGrad)" />
+  <ellipse cx="100" cy="136" rx="34" ry="38" fill="url(#catBelly)" />
+
+  <!-- Left Ear -->
+  <polygon points="56,76 44,28 84,52" fill="#ea580c" />
+  <polygon points="58,70 50,38 78,54" fill="#fecdd3" />
+
+  <!-- Right Ear -->
+  <polygon points="144,76 156,28 116,52" fill="#ea580c" />
+  <polygon points="142,70 150,38 122,54" fill="#fecdd3" />
+
+  <!-- Head -->
+  <circle cx="100" cy="85" r="48" fill="url(#catGrad)" />
+
+  <!-- Tiger Stripes -->
+  <path d="M 100 42 L 100 54" stroke="#c2410c" stroke-width="3" stroke-linecap="round" />
+  <path d="M 90 44 L 92 56" stroke="#c2410c" stroke-width="3" stroke-linecap="round" />
+  <path d="M 110 44 L 108 56" stroke="#c2410c" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Big Sparkling Green Eyes -->
+  <ellipse cx="80" cy="84" rx="12" ry="14" fill="#ffffff" />
+  <ellipse cx="80" cy="84" rx="8" ry="10" fill="#10b981" />
+  <ellipse cx="80" cy="84" rx="5" ry="7" fill="#064e3b" />
+  <circle cx="78" cy="80" r="3" fill="#ffffff" />
+  <circle cx="83" cy="86" r="1.5" fill="#ffffff" />
+
+  <ellipse cx="120" cy="84" rx="12" ry="14" fill="#ffffff" />
+  <ellipse cx="120" cy="84" rx="8" ry="10" fill="#10b981" />
+  <ellipse cx="120" cy="84" rx="5" ry="7" fill="#064e3b" />
+  <circle cx="118" cy="80" r="3" fill="#ffffff" />
+  <circle cx="123" cy="86" r="1.5" fill="#ffffff" />
+
+  <!-- Pink Nose & Cute Mouth -->
+  <polygon points="100,94 95,100 105,100" fill="#f43f5e" />
+  <path d="M 95 100 C 90 106 86 104 84 102" stroke="#431407" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  <path d="M 105 100 C 110 106 114 104 116 102" stroke="#431407" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+  <!-- Whiskers -->
+  <path d="M 68 96 L 40 92 M 68 102 L 38 105 M 68 108 L 42 118" stroke="#fdba74" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 132 96 L 160 92 M 132 102 L 162 105 M 132 108 L 158 118" stroke="#fdba74" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Rosy Cheeks -->
+  <ellipse cx="66" cy="98" rx="8" ry="5" fill="#fb7185" opacity="0.45" />
+  <ellipse cx="134" cy="98" rx="8" ry="5" fill="#fb7185" opacity="0.45" />
+
+  <!-- Front Paws -->
+  <ellipse cx="84" cy="170" rx="12" ry="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2" />
+  <ellipse cx="116" cy="170" rx="12" ry="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2" />
+</svg>

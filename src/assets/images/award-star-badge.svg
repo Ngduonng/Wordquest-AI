@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff08a"/>
+      <stop offset="40%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <linearGradient id="ribbonLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="ribbonRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <filter id="badgeShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#ca8a04" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Backdrop soft circle -->
+  <circle cx="100" cy="100" r="90" fill="#fffbeb" />
+  <circle cx="100" cy="100" r="82" fill="#fef08a" opacity="0.3"/>
+
+  <!-- Ribbon tails (Đuôi ruy băng xanh dương) -->
+  <polygon points="85,110 65,182 82,170 100,182 95,110" fill="url(#ribbonLeft)" filter="drop-shadow(0 4px 6px rgba(2, 132, 199, 0.3))"/>
+  <polygon points="115,110 100,182 118,170 135,182 105,110" fill="url(#ribbonRight)" filter="drop-shadow(0 4px 6px rgba(2, 132, 199, 0.3))"/>
+
+  <!-- Golden Rosette Badge Ring -->
+  <circle cx="100" cy="90" r="62" fill="#d97706" />
+  <circle cx="100" cy="90" r="58" fill="#f59e0b" />
+  <circle cx="100" cy="90" r="52" fill="#fef3c7" />
+
+  <!-- Radiating Star Polygon -->
+  <polygon points="100,38 114,68 147,70 122,91 130,123 100,105 70,123 78,91 53,70 86,68" 
+           fill="url(#starGrad)" filter="url(#badgeShadow)"/>
+
+  <!-- Star Inner Emboss -->
+  <polygon points="100,46 111,70 136,72 116,88 122,112 100,98 78,112 84,88 64,72 89,70" 
+           fill="#fef08a" opacity="0.6"/>
+
+  <!-- Sparkle glint on top-left tip -->
+  <polygon points="100,38 102,46 108,46 103,50 105,56 100,52 95,56 97,50 92,46 98,46" fill="#ffffff"/>
+
+  <!-- Victory Dots around ring -->
+  <circle cx="100" cy="33" r="2.5" fill="#ffffff" />
+  <circle cx="138" cy="52" r="2.5" fill="#ffffff" />
+  <circle cx="152" cy="90" r="2.5" fill="#ffffff" />
+  <circle cx="138" cy="128" r="2.5" fill="#ffffff" />
+  <circle cx="62" cy="128" r="2.5" fill="#ffffff" />
+  <circle cx="48" cy="90" r="2.5" fill="#ffffff" />
+  <circle cx="62" cy="52" r="2.5" fill="#ffffff" />
+</svg>

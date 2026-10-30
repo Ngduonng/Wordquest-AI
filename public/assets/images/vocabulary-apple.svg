@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="appleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="40%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <filter id="appleShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#991b1b" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Backdrop soft circle -->
+  <circle cx="100" cy="100" r="90" fill="#fef2f2" />
+  <circle cx="100" cy="100" r="82" fill="#fee2e2" opacity="0.6"/>
+
+  <!-- Apple Stem (Cuống táo) -->
+  <path d="M 100 55 C 98 32 108 22 120 18 C 117 24 112 34 104 55 Z" fill="#78350f" />
+
+  <!-- Apple Leaf (Lá xanh) -->
+  <path d="M 106 45 C 130 30 155 42 150 62 C 128 66 112 55 106 45 Z" fill="url(#leafGrad)" />
+  <path d="M 106 45 C 126 50 144 55 150 62" stroke="#15803d" stroke-width="1.5" fill="none"/>
+
+  <!-- Apple Body (Trái táo căng mọng) -->
+  <path d="M 100 60 
+           C 120 46 162 55 165 95 
+           C 168 135 142 175 100 178 
+           C 58 175 32 135 35 95 
+           C 38 55 80 46 100 60 Z" 
+        fill="url(#appleGrad)" filter="url(#appleShadow)"/>
+
+  <!-- Glossy Reflection Highlight -->
+  <ellipse cx="68" cy="88" rx="14" ry="24" transform="rotate(-25 68 88)" fill="#ffffff" opacity="0.4" />
+  <ellipse cx="62" cy="74" rx="5" ry="8" transform="rotate(-25 62 74)" fill="#ffffff" opacity="0.65" />
+
+  <!-- Cute friendly kawaii smile for kids -->
+  <circle cx="80" cy="115" r="4.5" fill="#450a0a" />
+  <circle cx="81.5" cy="113.5" r="1.5" fill="#ffffff" />
+  <circle cx="120" cy="115" r="4.5" fill="#450a0a" />
+  <circle cx="121.5" cy="113.5" r="1.5" fill="#ffffff" />
+  <path d="M 94 122 Q 100 128 106 122" stroke="#450a0a" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  <!-- Cheeks -->
+  <ellipse cx="70" cy="122" rx="6" ry="4" fill="#fb7185" opacity="0.6" />
+  <ellipse cx="130" cy="122" rx="6" ry="4" fill="#fb7185" opacity="0.6" />
+</svg>

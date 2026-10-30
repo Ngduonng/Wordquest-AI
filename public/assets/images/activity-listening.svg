@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="listenBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#e0e7ff"/>
+    </linearGradient>
+    <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Backdrop soft circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#listenBg)" />
+  <circle cx="100" cy="100" r="82" fill="#c7d2fe" opacity="0.4"/>
+
+  <!-- Student Body -->
+  <path d="M 60 178 C 60 138 140 138 140 178 Z" fill="#3b82f6" />
+
+  <!-- Head -->
+  <circle cx="100" cy="108" r="32" fill="#fcd34d" />
+  <!-- Hair with cute bangs -->
+  <path d="M 68 100 C 68 68 132 68 132 100 C 124 88 108 92 100 86 C 92 92 76 88 68 100 Z" fill="#92400e" />
+
+  <!-- Eyes - peaceful listening, closed arches with happy lashes -->
+  <path d="M 84 108 Q 89 104 94 108" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 106 108 Q 111 104 116 108" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Content gentle smile -->
+  <path d="M 94 118 Q 100 124 106 118" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Cheeks -->
+  <circle cx="78" cy="114" r="5" fill="#fb7185" opacity="0.6"/>
+  <circle cx="122" cy="114" r="5" fill="#fb7185" opacity="0.6"/>
+
+  <!-- Big Cozy Over-Ear Headphones -->
+  <path d="M 64 108 C 64 56 136 56 136 108" stroke="url(#phoneGrad)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- Left Ear Cushion -->
+  <rect x="56" y="94" width="16" height="28" rx="8" fill="#4338ca" />
+  <rect x="60" y="98" width="8" height="20" rx="4" fill="#a5b4fc" />
+  <!-- Right Ear Cushion -->
+  <rect x="128" y="94" width="16" height="28" rx="8" fill="#4338ca" />
+  <rect x="132" y="98" width="8" height="20" rx="4" fill="#a5b4fc" />
+
+  <!-- Sound Waves (Left) -->
+  <path d="M 44 98 C 38 104 38 112 44 118" stroke="#06b6d4" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 36 92 C 26 102 26 114 36 124" stroke="#06b6d4" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Sound Waves (Right) -->
+  <path d="M 156 98 C 162 104 162 112 156 118" stroke="#06b6d4" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 164 92 C 174 102 174 114 164 124" stroke="#06b6d4" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Playful musical notes floating on top -->
+  <path d="M 136 44 L 136 34 L 152 30 L 152 40 M 136 38 L 152 34" stroke="#f59e0b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <circle cx="132" cy="46" r="4" fill="#f59e0b" />
+  <circle cx="148" cy="42" r="4" fill="#f59e0b" />
+
+  <polygon points="60,40 62,45 67,45 63,48 65,53 60,50 55,53 57,48 53,45 58,45" fill="#fde047" />
+</svg>

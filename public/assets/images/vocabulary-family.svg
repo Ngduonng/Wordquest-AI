@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="famGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Backdrop soft circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#famGrad)" />
+  <circle cx="100" cy="100" r="82" fill="#a7f3d0" opacity="0.3"/>
+
+  <!-- Warm Little Heart Floating on top -->
+  <path d="M 100 28 C 96 20 86 18 80 26 C 72 36 86 48 100 58 C 114 48 128 36 120 26 C 114 18 104 20 100 28 Z" fill="#f43f5e" />
+
+  <!-- DAD (Left Back) -->
+  <!-- Hair -->
+  <path d="M 46 62 C 46 44 76 44 76 62 Z" fill="#334155" />
+  <!-- Head -->
+  <circle cx="61" cy="66" r="14" fill="#fcd34d" />
+  <!-- Eyes & Smile -->
+  <circle cx="56" cy="65" r="1.5" fill="#1e293b" />
+  <circle cx="66" cy="65" r="1.5" fill="#1e293b" />
+  <path d="M 58 71 Q 61 74 64 71" stroke="#1e293b" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Dad Body / Shirt -->
+  <path d="M 42 120 C 42 84 80 84 80 120 Z" fill="#2563eb" />
+
+  <!-- MOM (Right Back) -->
+  <!-- Long Hair Back -->
+  <path d="M 120 62 C 120 44 158 44 158 72 C 158 90 154 98 152 102 C 146 102 144 88 144 80 C 134 80 130 102 124 102 Z" fill="#78350f" />
+  <!-- Head -->
+  <circle cx="139" cy="66" r="14" fill="#fcd34d" />
+  <!-- Eyes & Smile -->
+  <circle cx="134" cy="65" r="1.5" fill="#1e293b" />
+  <circle cx="144" cy="65" r="1.5" fill="#1e293b" />
+  <path d="M 136 71 Q 139 74 142 71" stroke="#1e293b" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Mom Cheeks -->
+  <circle cx="131" cy="68" r="2" fill="#fb7185" opacity="0.6"/>
+  <circle cx="147" cy="68" r="2" fill="#fb7185" opacity="0.6"/>
+  <!-- Mom Dress -->
+  <path d="M 120 120 C 120 84 158 84 158 120 Z" fill="#ec4899" />
+
+  <!-- SON (Front Left) -->
+  <!-- Hair -->
+  <path d="M 64 116 C 64 104 88 104 88 116 Z" fill="#475569" />
+  <!-- Head -->
+  <circle cx="76" cy="120" r="11" fill="#fcd34d" />
+  <circle cx="72" cy="119" r="1.5" fill="#1e293b" />
+  <circle cx="80" cy="119" r="1.5" fill="#1e293b" />
+  <path d="M 74 124 Q 76 127 78 124" stroke="#1e293b" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Shirt -->
+  <path d="M 60 168 C 60 134 92 134 92 168 Z" fill="#06b6d4" />
+
+  <!-- DAUGHTER (Front Right) -->
+  <!-- Hair pigtails -->
+  <circle cx="112" cy="112" r="4" fill="#92400e" />
+  <circle cx="136" cy="112" r="4" fill="#92400e" />
+  <path d="M 112 116 C 112 104 136 104 136 116 Z" fill="#92400e" />
+  <!-- Head -->
+  <circle cx="124" cy="120" r="11" fill="#fcd34d" />
+  <circle cx="120" cy="119" r="1.5" fill="#1e293b" />
+  <circle cx="128" cy="119" r="1.5" fill="#1e293b" />
+  <path d="M 122 124 Q 124 127 126 124" stroke="#1e293b" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Cheeks -->
+  <circle cx="118" cy="122" r="1.5" fill="#fb7185" />
+  <circle cx="130" cy="122" r="1.5" fill="#fb7185" />
+  <!-- Dress -->
+  <path d="M 108 168 C 108 134 140 134 140 168 Z" fill="#fbbf24" />
+</svg>

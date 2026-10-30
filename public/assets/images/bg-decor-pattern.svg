@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <!-- Very soft pastel gradient backdrop -->
+  <defs>
+    <linearGradient id="bgLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#f5f3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgLight)" />
+
+  <!-- Doodled Paper Airplanes (subtle, 15% opacity) -->
+  <g stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 80 80 L 140 100 L 100 130 Z M 140 100 L 95 108" />
+    <path d="M 50 110 Q 65 100 80 112" stroke-dasharray="3,3"/>
+    
+    <path d="M 720 280 L 660 300 L 700 330 Z M 660 300 L 705 308" />
+    <path d="M 750 260 Q 735 270 720 282" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- Floating soft stars and sparkle crosses (20% opacity) -->
+  <g fill="#facc15" opacity="0.3">
+    <polygon points="220,60 223,67 230,67 225,71 227,78 220,74 213,78 215,71 210,67 217,67"/>
+    <polygon points="560,90 562,95 567,95 563,98 565,103 560,100 555,103 557,98 553,95 558,95"/>
+    <polygon points="120,320 122,325 127,325 123,328 125,333 120,330 115,333 117,328 113,325 118,325"/>
+    <polygon points="680,80 682,85 687,85 683,88 685,93 680,90 675,93 677,88 673,85 678,85"/>
+  </g>
+
+  <!-- Floating books & pencil outlines -->
+  <g stroke="#06b6d4" stroke-width="1.5" fill="none" opacity="0.2" stroke-linecap="round">
+    <!-- Tiny book open -->
+    <path d="M 380 50 Q 400 44 420 50 L 420 70 Q 400 64 380 70 Z M 400 46 L 400 68 M 400 50 Q 420 44 440 50 L 440 70 Q 420 64 400 68"/>
+    <!-- Pencil -->
+    <path d="M 450 360 L 480 330 L 490 340 L 460 370 Z M 450 360 L 442 368 L 460 370"/>
+  </g>
+
+  <!-- Soft sound wave / speech bubbles -->
+  <g stroke="#a855f7" stroke-width="1.5" fill="none" opacity="0.18">
+    <ellipse cx="280" cy="360" rx="20" ry="14" />
+    <path d="M 270 372 L 260 384 L 278 373" />
+  </g>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="puzzleBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf4ff"/>
+      <stop offset="100%" stop-color="#fae8ff"/>
+    </linearGradient>
+    <linearGradient id="piece1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="piece2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <filter id="shadowPuzzle" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Backdrop soft circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#puzzleBg)" />
+  <circle cx="100" cy="100" r="82" fill="#f0abfc" opacity="0.3"/>
+
+  <!-- Left Puzzle Piece (Blue - Word / Picture) -->
+  <path d="M 40 60 
+           L 95 60 
+           C 95 72 107 74 107 85 
+           C 107 96 95 98 95 110 
+           L 95 140 
+           L 40 140 
+           Z" 
+        fill="url(#piece1Grad)" filter="url(#shadowPuzzle)"/>
+  <!-- Highlight shine on Piece 1 -->
+  <path d="M 46 66 L 90 66" stroke="#bae6fd" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Right Puzzle Piece (Yellow - Meaning) -->
+  <path d="M 160 140 
+           L 105 140 
+           C 105 128 93 126 93 115 
+           C 93 104 105 102 105 90 
+           L 105 60 
+           L 160 60 
+           Z" 
+        fill="url(#piece2Grad)" filter="url(#shadowPuzzle)"/>
+  <!-- Highlight shine on Piece 2 -->
+  <path d="M 115 66 L 154 66" stroke="#fef08a" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Magic connection sparkles in the center -->
+  <polygon points="100,75 102,80 107,80 103,83 105,88 100,85 95,88 97,83 93,80 98,80" fill="#ffffff" filter="drop-shadow(0 0 4px #38bdf8)"/>
+  <polygon points="100,118 102,123 107,123 103,126 105,131 100,128 95,131 97,126 93,123 98,123" fill="#ffffff" filter="drop-shadow(0 0 4px #eab308)"/>
+
+  <!-- Big Central Star of Success -->
+  <polygon points="100,28 104,38 115,38 106,44 109,55 100,48 91,55 94,44 85,38 96,38" fill="#f59e0b" />
+  <polygon points="30,42 32,46 36,46 33,49 34,53 30,50 26,53 27,49 24,46 28,46" fill="#38bdf8" />
+  <polygon points="170,42 172,46 176,46 173,49 174,53 170,50 166,53 167,49 164,46 168,46" fill="#facc15" />
+</svg>

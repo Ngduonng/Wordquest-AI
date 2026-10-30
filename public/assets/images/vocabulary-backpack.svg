@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bagMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="40%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="pocketGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="yellowAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Backdrop soft circle -->
+  <circle cx="100" cy="100" r="90" fill="#f0f9ff" />
+  <circle cx="100" cy="100" r="82" fill="#e0f2fe" opacity="0.6"/>
+
+  <!-- Top Handle -->
+  <path d="M 80 48 C 80 26 120 26 120 48" stroke="#0284c7" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- Left / Right Shoulder Straps peeking out -->
+  <path d="M 52 70 C 38 90 38 140 52 165" stroke="#0369a1" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M 148 70 C 162 90 162 140 148 165" stroke="#0369a1" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Backpack Main Body -->
+  <rect x="52" y="44" width="96" height="126" rx="34" fill="url(#bagMain)" />
+
+  <!-- Side Pocket with cute water bottle on right -->
+  <rect x="144" y="112" width="14" height="42" rx="6" fill="#0284c7" />
+  <rect x="146" y="96" width="10" height="20" rx="3" fill="#a7f3d0" />
+  <rect x="148" y="90" width="6" height="6" rx="2" fill="#10b981" />
+
+  <!-- Front Pocket -->
+  <rect x="62" y="104" width="76" height="58" rx="18" fill="url(#pocketGrad)" />
+  <!-- Zipper line & cute puller -->
+  <path d="M 68 112 L 132 112" stroke="#bae6fd" stroke-width="2.5" stroke-dasharray="3,2" />
+  <circle cx="100" cy="112" r="5" fill="url(#yellowAccent)" />
+
+  <!-- Top Zipper arch -->
+  <path d="M 68 62 Q 100 50 132 62" stroke="#bae6fd" stroke-width="3" stroke-dasharray="3,2" fill="none"/>
+
+  <!-- Cute Ruler & Pencil peeking out of top pouch -->
+  <rect x="76" y="28" width="8" height="26" rx="2" fill="#facc15" transform="rotate(-15 76 28)"/>
+  <polygon points="73,20 70,28 77,26" fill="#f97316"/>
+  <polygon points="73,20 71.5,24 74.5,23" fill="#1e293b"/>
+
+  <!-- Decorative Badge Star on pocket -->
+  <polygon points="100,126 103,133 111,133 104,138 107,145 100,140 93,145 96,138 89,133 97,133" fill="#fde047" />
+
+  <!-- Bottom protective patches -->
+  <ellipse cx="72" cy="166" rx="10" ry="4" fill="#0f172a" opacity="0.3"/>
+  <ellipse cx="128" cy="166" rx="10" ry="4" fill="#0f172a" opacity="0.3"/>
+</svg>
